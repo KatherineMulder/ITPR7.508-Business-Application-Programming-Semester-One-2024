@@ -17,12 +17,9 @@ Table of Contents
     - [1.1 Document Purpose](#11-document-purpose)
     - [1.2 Subject Scope](#12-subject-scope)
     - [1.3 Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-<<<<<<< Updated upstream:Design/Software Design document.md
-    - [1.5 Overview of documentation](#15-overview-of-documentation)
+      - [Data Design Diagrams](#data-design-diagrams)
+      - [Software Development](#software-development)
   - [2. Analysis/ Reflection of Business Issues](#2-analysis-reflection-of-business-issues)
-=======
-  - [2. Analysis/ Reflection of Business Issues (katherine)take what we did in the propsal and take it deeper](#2-analysis-reflection-of-business-issues-katherinetake-what-we-did-in-the-propsal-and-take-it-deeper)
->>>>>>> Stashed changes:Design/SDD.md
   - [3. Key areas of software application issues](#3-key-areas-of-software-application-issues)
     - [3.1 Reliability](#31-reliability)
     - [3.2 Scalability](#32-scalability)
@@ -44,6 +41,45 @@ Table of Contents
     - [7.1 User Case Diagram](#71-user-case-diagram)
     - [7.2 Sequence Diagram](#72-sequence-diagram)
     - [7.3 Activity Diagram](#73-activity-diagram)
+    - [7.4 Class Diagram](#74-class-diagram)
+  - [8. Interface Design](#8-interface-design)
+    - [8.1 Wireframes](#81-wireframes)
+  - [9. Test Framework](#9-test-framework)
+  - [10. Conclusion](#10-conclusion)
+>>>>>>> Stashed changes:Design/SDD.md
+- [Software Design Description](#software-design-description)
+  - [For  Home Loan Monitor](#for--home-loan-monitor)
+- [Table of Contents](#table-of-contents)
+  - [Revision History](#revision-history)
+  - [1. Introduction](#1-introduction)
+    - [1.1 Document Purpose](#11-document-purpose)
+    - [1.2 Subject Scope](#12-subject-scope)
+    - [1.3 Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
+      - [Data Design Diagrams](#data-design-diagrams)
+      - [Software Development](#software-development)
+  - [2. Analysis/ Reflection of Business Issues](#2-analysis-reflection-of-business-issues)
+  - [3. Key areas of software application issues](#3-key-areas-of-software-application-issues)
+    - [3.1 Reliability](#31-reliability)
+    - [3.2 Scalability](#32-scalability)
+    - [3.3 Performance](#33-performance)
+    - [3.4 Maintainability](#34-maintainability)
+    - [3.5 Security](#35-security)
+    - [3.6 Usability](#36-usability)
+    - [3.7 Compatibility](#37-compatibility)
+  - [4. Analysis \& Reflection of the Program Specifications](#4-analysis--reflection-of-the-program-specifications)
+    - [4.1 Graphical User Interface](#41-graphical-user-interface)
+    - [4.2 Identification / Authorization](#42-identification--authorization)
+    - [3.3 User Accounts](#33-user-accounts)
+    - [3.4 Client Relation Features](#34-client-relation-features)
+  - [5. System Overview](#5-system-overview)
+  - [6. Data Design](#6-data-design)
+    - [6.1 Entity Relationship Diagram](#61-entity-relationship-diagram)
+    - [6.2 Data Flow Diagram](#62-data-flow-diagram)
+  - [7. System Design](#7-system-design)
+    - [7.1 User Case Diagram](#71-user-case-diagram)
+    - [7.2 Sequence Diagram](#72-sequence-diagram)
+    - [7.3 Activity Diagram](#73-activity-diagram)
+    - [7.4 Class Diagram](#74-class-diagram)
   - [8. Interface Design](#8-interface-design)
     - [8.1 Wireframes](#81-wireframes)
   - [9. Test Framework](#9-test-framework)
@@ -56,18 +92,13 @@ Table of Contents
 |      |         |                     |           |
 |      |         |                     |           |
 
-<<<<<<< Updated upstream:Design/Software Design document.md
-## 1. Introduction
-> This section should provide an overview of the entire document
-=======
 ## 1. Introduction 
-> The following Software Design Description document outlines the design and architecture of a proposed Home Loan Management Tool. This tool aims to simplify mortgage management processes for individuals by offering a user-friendly interface and comprehensive features. It's important to note that this proposal is intended for personal use only and is not designed for financial advisers or professional consultation. <br><br>
+> The following Software Design Description document outlines the design and architecture of a proposed Home Loan Monitor Tool. This tool aims to simplify mortgage management processes for individuals by offering a user-friendly interface and comprehensive features. It's important to note that this proposal is intended for personal use only and is not designed for financial advisers or professional consultation. <br><br>
 The SDD serves as a detailed guide for developers, stakeholders, and users, providing insights into the software's functionality, structure, and behavior. This including data design, system design, interface design, and testing framework. <br>
 >
->>>>>>> Stashed changes:Design/SDD.md
 
 ### 1.1 Document Purpose
-The reason we're writing this document is to explain how the Home Loan Management Tool will work and how it's built. We want to make it easy for everyone involved to understand how the software will function and what it will look like.
+The reason we're writing this document is to explain how the Home Loan Monitor Tool will work and how it's built. We want to make it easy for everyone involved to understand how the software will function and what it will look like.
 
 * Users/ Project manager: This document serves as a guide for both project managers and users of the home loan management tool. It provides the software's functionality, design rationale, usability aspects, and system behavior. By understanding these details, users and project manager can make informed decisions about the project, while users can utilize the software to meet their needs.
 * Developers: This guide helps developers understand how the software is designed, the important decisions made about its structure, and how it's built. It's like a roadmap for them to turn requirements into a working program.
@@ -78,9 +109,9 @@ The reason we're writing this document is to explain how the Home Loan Managemen
 - **Project Includes:**
 1. Development of a mortgage calculator module enabling users to calculate monthly or fortnightly payments based on loan amount, interest rate, and loan term.
 2. Incorporation of the ability to compare multiple loans and interest rates.
-3. Enablement of users to input variable interest rates over specific periods and automatically update mortgage calculations accordingly.
+3. Enable users to input variable interest rates over specific periods and automatically update mortgage calculations, as well as to add extra payments or additional costs.
 4. Inclusion of a feature to view historical mortgage data.
-5. Support for managing multiple mortgages, allowing users to handle multiple properties simultaneously.
+5. Support for managing multiple mortgages, allowing users to handle multiple properties.
 6. Addition of a chart to display mortgage data.
 7. Provision of user-friendly interface webpages.
 8. Inclusion of thorough testing procedures to ensure the software functions as expected and meets quality standards.
@@ -98,13 +129,14 @@ The reason we're writing this document is to explain how the Home Loan Managemen
 6. Legal advice related to mortgages, including contract terms, legal obligations, or regulatory compliance. Users would need to consult legal professionals for such matters.
 7. Property valuation services, including home appraisals or estimates of property values.
 8. Tax advice or calculations of property taxes. Users would need to consult with tax professionals or refer to relevant tax regulations.
-9. While homeowners’ insurance and mortgage insurance are integral to homeownership, the software will not calculate insurance premiums.
+9. While homeowners’ insurance and mortgage insurance are integral to homeowners, the software will not calculate insurance premiums.
 10. Integration with banking systems, financial institutions, or real estate databases.
 11. Detailed analytics or reporting features beyond basic mortgage calculations will be excluded.
 12. Complex mortgage types, such as adjustable-rate mortgages (ARMs) with various index rates and margins, will be excluded for simplicity.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 
+#### Data Design Diagrams 
 1. **ERD**:
    - Definition: Entity-Relationship Diagram.
    - Description: A visual representation of the entities and relationships within a database. It illustrates how entities relate to each other within a database model.
@@ -113,22 +145,37 @@ The reason we're writing this document is to explain how the Home Loan Managemen
    - Definition: Data Flow Diagram.
    - Description: A graphical representation that shows the flow of data within a system. It visualizes the processes, data stores, and data flows involved in a system or business process.
 
-3. **Python**:
+#### Software Development 
+1. **Python**:
    - Definition: Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
 
-4. **Flask Framework**:
+2. **Flask Framework**:
    - Definition: Flask is a micro web framework written in Python.
    - Description: Flask provides tools, libraries, and technologies for building web applications. It is lightweight and modular, allowing developers to add only the components they need. Flask is known for its simplicity and flexibility.
 
-5. **Postgres**:
+3. **Postgres**:
    - Definition: PostgreSQL.
    - Description: PostgreSQL is an open-source relational database management system (RDBMS) known for its reliability, robustness, and advanced features. It supports SQL and is highly extensible, allowing users to define custom data types, functions, and more.
 
-6. **Pytest**:
+4. **Pytest**:
    - Definition: Pytest is a testing framework for Python.
    - Description: Pytest is a popular testing framework used for writing simple and scalable test cases in Python. It supports fixtures, parameterized testing, and assertions, making it suitable for testing various types of applications and libraries.
 
+5. **HTML**:
+     - Definition: HTML stands for Hypertext Markup Language. It is the standard markup language used to create and design web pages.
+     - Description: HTML provides the basic structure and elements necessary to organize and present content on the World Wide Web.
 
+6. **CSS**:
+   - Definition: Cascading Style Sheets (CSS) is a style sheet language used to describe the presentation of a document written in HTML. 
+   - Description: It allows web developers to control the layout, formatting, and appearance of multiple web pages at once by separating the content from its visual representation.
+
+7. **Bootstrap**:
+   - Definition: Bootstrap is a front-end framework for building responsive and mobile-first websites.
+   - Description: Bootstrap's grid system, CSS styles, and JavaScript plugins allow developers to create visually appealing and user-friendly websites with minimal effort.
+
+8. **JavaScript**:
+   - Definition: JavaScript is a high-level programming language primarily used for creating dynamic and interactive web content.
+   - Description: Enables developers to add interactivity, behavior, and functionality to web pages.
 
 ## 2. Analysis/ Reflection of Business Issues
 
@@ -155,12 +202,25 @@ The reason we're writing this document is to explain how the Home Loan Managemen
 
 ## 6. Data Design
 ### 6.1 Entity Relationship Diagram
+> The purpose of the Entity-Relationship Diagram (ERD) is to visually represent the structure of the database for the home loan monitor. By mapping out entities like "User," "mortgage," "override payment,"and so on, along with their attributes and relationships, the ERD will provide a clear understanding of how data is organized within the system. This visualization will aid in the design and development of the tool, ensuring it effectively manages home loans by calculating payments, tracking interest rates, and facilitating management of multiple mortgages. <br>
+
+> ![ERD](ERD.png)
 ### 6.2 Data Flow Diagram
+> The Data Flow Diagram (DFD) serves to illustrate the flow of data within the system, showing how data is input, processed, and output. It helps in understanding the flow of information and the interactions between different components within the software. <br>
+
+> ![DFD](DFD.png)
 
 ## 7. System Design 
 ### 7.1 User Case Diagram
+> The use case diagram outlines the interactions between users and the system, including the primary functions such as calculating mortgage payments, viewing amortization schedules, adjusting parameters, and accessing mortgage features.<br>
+
+> ![User case diagram](user_case.png)
 ### 7.2 Sequence Diagram
 ### 7.3 Activity Diagram
+>The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
+
+> ![activity diagram](activity_diagram.png)
+### 7.4 Class Diagram
 
 
 ## 8. Interface Design
