@@ -101,7 +101,7 @@ Describe what the rest of the document contains and how it is organized.
 ### 6.2 Data Flow Diagram
 > The Data Flow Diagram (DFD) serves to illustrate the flow of data within the system, showing how data is input, processed, and output. It helps in understanding the flow of information and the interactions between different components within the software. <br>
 
-> ![DFD](DFD.drawio.png)
+> ![DFD](DFD.png)
 ## 7. System Design 
 ### 7.1 User Case Diagram
 > 
