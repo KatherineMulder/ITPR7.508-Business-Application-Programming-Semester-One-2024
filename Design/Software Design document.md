@@ -46,7 +46,6 @@ Table of Contents
     - [8.1 Wireframes](#81-wireframes)
   - [9. Test Framework](#9-test-framework)
   - [10. Conclusion](#10-conclusion)
->>>>>>> Stashed changes:Design/SDD.md
 - [Software Design Description](#software-design-description)
   - [For  Home Loan Monitor](#for--home-loan-monitor)
 - [Table of Contents](#table-of-contents)
@@ -213,13 +212,17 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ## 7. System Design 
 ### 7.1 User Case Diagram
 > The use case diagram outlines the interactions between users and the system, including the primary functions such as calculating mortgage payments, viewing amortization schedules, adjusting parameters, and accessing mortgage features.<br>
-
-> ![User case diagram](user_case.png)
+> ![ user case diagram](usercase.png)
+### 7.2 Sequence Diagram
 ### 7.2 Sequence Diagram
 ### 7.3 Activity Diagram
 >The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
-
-> ![activity diagram](activity_diagram.png)
+> 1. User login activity diagram
+> ![user login activity diagram](user_login_activity_diargam.png) 
+> 2. User update mortgage activity diagram
+> ![user update mortgage activity diagram](update_mortgage_activity diagram.png)
+> 3. User viewing mortgage activity diagram
+> ![user viewing mortgage activity diagram](viewing_mortgage_activity diagram.png)
 ### 7.4 Class Diagram
 
 
