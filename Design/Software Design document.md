@@ -213,7 +213,12 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ### 7.1 User Case Diagram
 > The use case diagram outlines the interactions between users and the system, including the primary functions such as calculating mortgage payments, viewing amortization schedules, adjusting parameters, and accessing mortgage features.<br>
 > ![ user case diagram](usercase.png)
+<<<<<<< HEAD
 ### 7.2 Sequence Diagram
+=======
+### 7.2 Component Diagram
+> ![component diagram](Component-Diagram.png)
+>>>>>>> 4badbe9164eb202c594d697f8de586d476d07f32
 ### 7.3 Activity Diagram
 >The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
 > 1. User login activity diagram
@@ -223,8 +228,7 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 > 3. User viewing mortgage activity diagram
 > ![user viewing mortgage activity diagram](viewing_mortgage_activity_diagram.png)
 ### 7.4 Class Diagram
-
-
+> ![class diagram](Class_Diagram.png)
 ## 8. Interface Design
 ### 8.1 Wireframes
 A skeletal outline of the webpage, those wireframes shows the structure and placement of elements. 
