@@ -228,7 +228,17 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 
 ## 8. Interface Design
 ### 8.1 Wireframes
-
+A skeletal outline of the webpage, those wireframes shows the structure and placement of elements. 
+> **Dashboard page**: After the user logs in or clicks the 'Try it out' button, the dashboard page will be displayed.
+> <br> TThis page allows users to input new mortgage information and view their calculation history. 
+> <br>For first-time users, they will need to input new mortgage details to display the chart, dashboard, and amortization.
+> For existing users, the chart will display the most recent record.
+> <br> A confirmation window will pop up to ensure clarity before proceeding with the 'Clear' and 'Calculate' buttons.
+> ![wireframe_dashboard](wireframe_dashboard.png)
+> 
+> **Amortization page** When users click "view history" button the amortization page will appear.
+> <br> This page displays past and future records for multiple mortgages by selecting Mortgage 1, 2, 3, and so on. Users can also choose the view frequency (fortnightly or monthly) using the dropdown button.
+> ![wireframe_transaction](wireframe_transaction.png)
 ## 9. Test Framework
 
 
