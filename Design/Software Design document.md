@@ -227,7 +227,7 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ### 7.3 Activity Diagram
 >The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
 > 1. User login activity diagram
-> ![user login activity diagram](user_login_activity_diargam.png) 
+> ![user login activity diagram](user_login_activity_diagram.png) 
 > 2. User update mortgage activity diagram
 > ![user update mortgage activity diagram](update_mortgage_activity_diagram.png)
 > 3. User viewing mortgage activity diagram
@@ -237,16 +237,30 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ## 8. Interface Design
 ### 8.1 Wireframes
 A skeletal outline of the webpage, those wireframes shows the structure and placement of elements. 
-> **Dashboard page**: After the user logs in or clicks the 'Try it out' button, the dashboard page will be displayed.
-> <br> TThis page allows users to input new mortgage information and view their calculation history. 
-> <br>For first-time users, they will need to input new mortgage details to display the chart, dashboard, and amortization.
-> For existing users, the chart will display the most recent record.
-> <br> A confirmation window will pop up to ensure clarity before proceeding with the 'Clear' and 'Calculate' buttons.
-> ![wireframe_dashboard](wireframe_dashboard.png)
-> 
-> **Amortization page** When users click "view history" button the amortization page will appear.
-> <br> This page displays past and future records for multiple mortgages by selecting Mortgage 1, 2, 3, and so on. Users can also choose the view frequency (fortnightly or monthly) using the dropdown button.
-> ![wireframe_transaction](wireframe_transaction.png)
+<br><br>**User login page** 
+when users open up the webpage. This log in page will display before entry the calculator.
+This page gives users options for log in as existing user, sign up an account or try it out as a first user before sign up.
+> ![login page](wireframe_user_login.png)
+
+<br><br>**Sign up page**: When user click sign up link, the sign up page will appear for users to sign up an account.
+In this page will grab user's username and password details. Alternately, User can still log in if they remember their log in details after enter this page or they can try the calculator without an account.
+> ![signup page](wireframe_sign_up.png)
+
+
+<br><br>**Input error shake effect**:
+Both log in and sign up pages has input error effect indication for invalid inputs.
+> ![user log in error page](wireframe_user_login_error.png)
+> ![user sign up error page](wireframe_sign_up_error.png)
+
+<br><br>**First time calculation page**: After the user logs in or clicks the 'Try it out' button, the dashboard page will be displayed.
+This page allows users to input new mortgage information for the first initial payment and find out the override payment before add extra payment for further analysis.
+> ![wireframe_first mortgage](wireframe_first_time_mortgage.png)
+
+
+<br><br>**Warning indications**: Confirm the user's action and prevent accidental deletion of entered data.
+Input data type will be set to prevention data input errors.
+> ![wireframe_frist_time_mortgage_warning](wireframe_frist_time_mortgage_warning.png)
+
 ## 9. Test Framework
 
 
