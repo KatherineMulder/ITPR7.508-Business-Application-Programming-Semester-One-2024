@@ -197,7 +197,10 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ### 3.4 Client Relation Features 
 
 ## 5. System Overview 
->
+> A guide to understanding a system. It tells you what the system does, who uses it, and how it works. 
+> It also mentions things like its parts, how it connects to other systems, what technology it uses, and how it's kept secure and working well. 
+> It's like a map that helps you get the big picture before diving into the details.
+> In the system overview selection here will provide datat design, system design and interface design.
 
 ## 6. Data Design
 ### 6.1 Entity Relationship Diagram
@@ -213,12 +216,14 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ### 7.1 User Case Diagram
 > The use case diagram outlines the interactions between users and the system, including the primary functions such as calculating mortgage payments, viewing amortization schedules, adjusting parameters, and accessing mortgage features.<br>
 > ![ user case diagram](usercase.png)
-<<<<<<< HEAD
+
 ### 7.2 Sequence Diagram
-=======
+> The sequence diagram is a visual story that shows how different parts of a system interact with each other over time.
+> Each object or component is represented by a box, and the messages or actions between them are shown as arrows. This diagram helps developers understand the order in which things happen in a system and how they're related to each other.
+
 ### 7.2 Component Diagram
 > ![component diagram](Component-Diagram.png)
->>>>>>> 4badbe9164eb202c594d697f8de586d476d07f32
+
 ### 7.3 Activity Diagram
 >The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
 > 1. User login activity diagram
