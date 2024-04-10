@@ -247,19 +247,57 @@ In this page will grab user's username and password details. Alternately, User c
 > ![signup page](wireframe_sign_up.png)
 
 
+<br><br>**Forgot password page**: 
+When user click forgot password the first process will ask user to input their surename.
+![wireframe_forgot_password](wireframe_forgot_password.png)
+
+Next, The rest password page will appear.
+![wireframe_reset_password](wireframe_reset_password.png)
+
+when user input incorrect password. A indication text will appear.
+![wireframe_reset_password_error](wireframe_reset_password_error.png)
+
+
+Once the password is reset, the system will direct user back to log in page.
+
+
 <br><br>**Input error shake effect**:
-Both log in and sign up pages has input error effect indication for invalid inputs.
+All the user account setting pages has input error effect indication for invalid inputs.
 > ![user log in error page](wireframe_user_login_error.png)
 > ![user sign up error page](wireframe_sign_up_error.png)
 
 <br><br>**First time calculation page**: After the user logs in or clicks the 'Try it out' button, the dashboard page will be displayed.
 This page allows users to input new mortgage information for the first initial payment and find out the override payment before add extra payment for further analysis.
-> ![wireframe_first mortgage](wireframe_first_time_mortgage.png)
+> ![wireframe_first mortgage](wireframe_frist_time_mortgage.png)
 
 
 <br><br>**Warning indications**: Confirm the user's action and prevent accidental deletion of entered data.
 Input data type will be set to prevention data input errors.
 > ![wireframe_frist_time_mortgage_warning](wireframe_frist_time_mortgage_warning.png)
+
+
+
+<br><br>**Override mortgage page**: When user click for more analysis button after the initial calculation, the override payment calculator will appear.
+User can decide if they want to input override payment or not. 
+User will need to click show analysis for display the amortization.
+> ![wireframe_override_calculator_mortgage](wireframe_override_calculator_mortgage.png)
+
+
+
+<br><br>**Amortization page**: User will be able to view their mortgages. The first session will display the previous mortgage and the second session will display the most recent mortgage.
+<br><br> _Note_: for the existing users, once user log in successfully, the transaction page will appear after log in. To be able to add new mortgage, there is add new mortgage button on the bottom right for adding more mortgages.
+> ![wireframe_amoritzation_mortgage](wireframe_amoritzation_mortgage.png)
+
+ 
+<br><br>**User settings page**: On the top right, there is a user icon where user can click for change user name or password. 
+When user click the icon, a pop-up window will appear for user to select more options.
+> ![wireframe_user_popup_window](wireframe_user_popup_window.png)
+
+_Note_: 
+* When use click account setting, it will direct user to the account setting page.
+* When user click view history button, it will direct user to the amortization page.
+* When user click change password button, it will direct user to the update password page. 
+
 
 ## 9. Test Framework
 
