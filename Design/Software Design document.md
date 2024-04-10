@@ -249,8 +249,8 @@ when users open up the webpage. This log in page will display before entry the c
 This page gives users options for log in as existing user, sign up an account or try it out as a first user before sign up.
 > ![login page](wireframe_user_login.png)
 
-<br><br>**Sign up page**: When user click sign up link, the sign up page will appear for users to sign up an account.
-In this page will grab user's username and password details. Alternately, User can still log in if they remember their log in details after enter this page or they can try the calculator without an account.
+<br><br>**Sign up page**: When user click sign up link, the sign-up page will appear for users to sign up an account.
+In this page will grab user's username and password details. Alternately, User can still log in if they remember their login details after enter this page, or they can try the calculator without an account.
 > ![signup page](wireframe_sign_up.png)
 
 
@@ -261,7 +261,7 @@ When user click forgot password the first process will ask user to input their s
 Next, The rest password page will appear.
 ![wireframe_reset_password](wireframe_reset_password.png)
 
-when user input incorrect password. A indication text will appear.
+when user input incorrect password. AN indication text will appear.
 ![wireframe_reset_password_error](wireframe_reset_password_error.png)
 
 
@@ -292,11 +292,11 @@ User will need to click show analysis for display the amortization.
 
 
 <br><br>**Amortization page**: User will be able to view their mortgages. The first session will display the previous mortgage and the second session will display the most recent mortgage.
-<br><br> _Note_: for the existing users, once user log in successfully, the transaction page will appear after log in. To be able to add new mortgage, there is add new mortgage button on the bottom right for adding more mortgages.
-> ![wireframe_amoritzation_mortgage](wireframe_amoritzation_mortgage.png)
+<br><br> _Note_: for the existing users, once user log in successfully, the transaction page will appear after log in. To be able to add new mortgage, there is added new mortgage button on the bottom right for adding more mortgages.
+> ![wireframe_amortization_mortgage](wireframe_amortization_mortgage.png)
 
  
-<br><br>**User info pop up window**: On the top right, there is a user icon where user can click for change user name or password. 
+<br><br>**User info pop up window**: On the top right, there is a user icon where user can click for change username or password. 
 When user click the icon, a pop-up window will appear for user to select more options.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
 
