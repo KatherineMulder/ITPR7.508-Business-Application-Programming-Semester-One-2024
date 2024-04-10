@@ -18,7 +18,7 @@ Table of Contents
     - [1.2 Subject Scope](#12-subject-scope)
     - [1.3 Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
       - [Data Design Diagrams](#data-design-diagrams)
-      - [Software Development](#software-development)
+    - [1.4 Software Development](#14-software-development)
   - [2. Analysis/ Reflection of Business Issues](#2-analysis-reflection-of-business-issues)
   - [3. Key areas of software application issues](#3-key-areas-of-software-application-issues)
     - [3.1 Reliability](#31-reliability)
@@ -144,7 +144,8 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
    - Definition: Data Flow Diagram.
    - Description: A graphical representation that shows the flow of data within a system. It visualizes the processes, data stores, and data flows involved in a system or business process.
 
-#### Software Development 
+### 1.4  Software Development  
+
 1. **Python**:
    - Definition: Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
 
@@ -177,6 +178,12 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
    - Description: Enables developers to add interactivity, behavior, and functionality to web pages.
 
 ## 2. Analysis/ Reflection of Business Issues
+1. Business Objectives:  Our main goal is to develop a user-friendly mortgage calculator for individuals. This tool will help them accurately estimate their mortgage payments based on factors like loan amount, interest rate, and loan term.
+2. Business Processes: Our software will simplify the process of estimating mortgage payments. Users will be able to input their loan details, and the software will automatically calculate and present the results clearly.
+3. Regulatory and Compliance Requirements: Since the software is for individual use, it doesn't fall under specific financial regulations.
+4. Risk Analysis: TThere are some technical risks due to our team's limited experience, but we can manage these with guidance from our lecture. Limited resources and time pose business risks, so we need to make sure to meet the declines.
+5. Reflection on Business Issues: Our project aligns well with our team's capabilities. Guidance from our instructor will help us overcome challenges. We're focusing on creating value for individual users without unnecessary complexity.
+6. Recommendations: Prioritize simplicity and usability. Maintain regular communication with our lecture for guidance. Break the project into manageable tasks with realistic milestones for tracking progress.
 
 ## 3. Key areas of software application issues
 
@@ -289,14 +296,25 @@ User will need to click show analysis for display the amortization.
 > ![wireframe_amoritzation_mortgage](wireframe_amoritzation_mortgage.png)
 
  
-<br><br>**User settings page**: On the top right, there is a user icon where user can click for change user name or password. 
+<br><br>**User info pop up window**: On the top right, there is a user icon where user can click for change user name or password. 
 When user click the icon, a pop-up window will appear for user to select more options.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
 
 _Note_: 
 * When use click account setting, it will direct user to the account setting page.
 * When user click view history button, it will direct user to the amortization page.
-* When user click change password button, it will direct user to the update password page. 
+* A log-out option for user to discontinue with the system.
+
+<br><br>**User account settings**: When user click account settings in the pop-up window (above), a user setting page will appear.
+The username will display as default and user only have the option for changing password.
+> ![wireframe_user_settings](wireframe_user_settings.png)
+
+
+<br><br>**User account settings confirmation**:
+When user inputs the new password and click update account, a confirmation pop up window will appear.
+> ![wireframe_user_settings_comfrim](wireframe_user_settings_comfrim.png)
+
+
 
 
 ## 9. Test Framework
