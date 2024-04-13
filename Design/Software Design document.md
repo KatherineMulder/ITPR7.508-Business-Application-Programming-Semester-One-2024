@@ -234,85 +234,57 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ### 7.3 Activity Diagram
 >The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
 > 1. User login activity diagram
-> ![user login activity diagram](user_login_activity_diagram.png) 
+> ![activity_diagram_add_mortgage](activity_diagram_add_mortgage.png) 
 > 2. User update mortgage activity diagram
-> ![user update mortgage activity diagram](update_mortgage_activity_diagram.png)
+> ![activity_diagram_edit_transaction](activity_diagram_edit_transaction.png)
 > 3. User viewing mortgage activity diagram
-> ![user viewing mortgage activity diagram](viewing_mortgage_activity_diagram.png)
+> ![activity_diagram_transaction_analysis](activity_diagram_transaction_analysis.png)
+> 4. User viewing mortgage activity diagram
+> ![activity_diagram_user_login](activity_diagram_user_login.png)
 ### 7.4 Class Diagram
 > ![class diagram](Class_Diagram.png)
+
+
 ## 8. Interface Design
 ### 8.1 Wireframes
 A skeletal outline of the webpage, those wireframes shows the structure and placement of elements. 
 <br><br>**User login page** 
 when users open up the webpage. This log in page will display before entry the calculator.
-This page gives users options for log in as existing user, sign up an account or try it out as a first user before sign up.
+This page gives users options for log-in and sign-up an account also try it out.
 > ![login page](wireframe_user_login.png)
 
-<br><br>**Sign up page**: When user click sign up link, the sign-up page will appear for users to sign up an account.
+<br><br>**Sign up page**: 
 In this page will grab user's username and password details. Alternately, User can still log in if they remember their login details after enter this page, or they can try the calculator without an account.
 > ![signup page](wireframe_sign_up.png)
 
 
-<br><br>**Forgot password page**: 
-When user click forgot password the first process will ask user to input their surename.
-![wireframe_forgot_password](wireframe_forgot_password.png)
-
-Next, The rest password page will appear.
-![wireframe_reset_password](wireframe_reset_password.png)
-
-when user input incorrect password. AN indication text will appear.
-![wireframe_reset_password_error](wireframe_reset_password_error.png)
+<br><br>**add mortgage page**: After the user logs in or clicks the 'Try it out' button, the adding new mortgage page will be displayed.
+This page allows users to input new mortgage information.
+> ![wireframe_add_mortgage](wireframe_add_mortgage.png)
 
 
-Once the password is reset, the system will direct user back to log in page.
+<br><br>**update mortgage page**: After a new mortgage is established, user will be able to edit mortgage on this page.
+This page will display current mortgage details and allow users to update the information. 
+Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs.  
+> ![wireframe_update_mortgage](wireframe_update_mortgage.png)
 
 
-<br><br>**Input error shake effect**:
-All the user account setting pages has input error effect indication for invalid inputs.
-> ![user log in error page](wireframe_user_login_error.png)
-> ![user sign up error page](wireframe_sign_up_error.png)
-
-<br><br>**First time calculation page**: After the user logs in or clicks the 'Try it out' button, the dashboard page will be displayed.
-This page allows users to input new mortgage information for the first initial payment and find out the override payment before add extra payment for further analysis.
-> ![wireframe_first mortgage](wireframe_frist_time_mortgage.png)
+<br><br>**Index page**: User will be able to view their transaction reports on this page. Where users can edit payment date, delete transaction, add new mortgage and update mortgage.
+![wireframe_index](wireframe_index.png) 
 
 
-<br><br>**Warning indications**: Confirm the user's action and prevent accidental deletion of entered data.
-Input data type will be set to prevention data input errors.
-> ![wireframe_frist_time_mortgage_warning](wireframe_frist_time_mortgage_warning.png)
-
-
-
-<br><br>**Override mortgage page**: When user click for more analysis button after the initial calculation, the override payment calculator will appear.
-User can decide if they want to input override payment or not. 
-User will need to click show analysis for display the amortization.
-> ![wireframe_override_calculator_mortgage](wireframe_override_calculator_mortgage.png)
-
-
-
-<br><br>**Amortization page**: User will be able to view their mortgages. The first session will display the previous mortgage and the second session will display the most recent mortgage.
-<br><br> _Note_: for the existing users, once user log in successfully, the transaction page will appear after log in. To be able to add new mortgage, there is added new mortgage button on the bottom right for adding more mortgages.
-> ![wireframe_amortization_mortgage](wireframe_amortization_mortgage.png)
-
- 
-<br><br>**User info pop up window**: On the top right, there is a user icon where user can click for change username or password. 
-When user click the icon, a pop-up window will appear for user to select more options.
-> ![wireframe_user_popup_window](wireframe_user_popup_window.png)
-
-_Note_: 
-* When use click account setting, it will direct user to the account setting page.
-* When user click view history button, it will direct user to the amortization page.
-* A log-out option for user to discontinue with the system.
-
-<br><br>**User account settings**: When user click account settings in the pop-up window (above), a user setting page will appear.
-The username will display as default and user only have the option for changing password.
+<br><br>**User account settings**: 
+The username will display as default and user can change password.
 > ![wireframe_user_settings](wireframe_user_settings.png)
 
 
-<br><br>**User account settings confirmation**:
-When user inputs the new password and click update account, a confirmation pop up window will appear.
-> ![wireframe_user_settings_comfrim](wireframe_user_settings_comfrim.png)
+<br><br>**User account icon**:
+When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
+> ![wireframe_user_icon_function](wireframe_user_icon_function.png)
+
+<br><br>**User deleting account page**:
+> ![wireframe_user_settings](wireframe_user_settings.png)
+
 
 
 
