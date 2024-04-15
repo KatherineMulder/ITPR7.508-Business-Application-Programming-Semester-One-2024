@@ -188,13 +188,27 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 ## 3. Key areas of software application issues
 
 ### 3.1 Reliability 
+  - Error Handling
+  - Data Integrity
+  - Backup/Recovery
 ### 3.2 Scalability
+  - Self Explainatory
 ### 3.3 Performance
+  - Responsetimes, Throughtput/Scalability
+  - Bottlenecks performance issues
 ### 3.4 Maintainability
+  - Maintainability, modularity and extensibility
+  - Code Standards, documentation requirements and version control
+  - How changes and updates will be handled
 ### 3.5 Security
+  - Identifying vulnerabilities and threats
+  - Define measures to protect data and unauthorised access
+  - Authentication, authorization, encryption and data privacy
 ### 3.6 Usability 
+  - UI/UX design
+  - Accessability and navigation
 ### 3.7 Compatibility
-
+  - Address different compatibilities
 
 ## 4. Analysis & Reflection of the Program Specifications
 
@@ -274,21 +288,18 @@ Users can analysis override payment and add extra costs if there is any. A comme
 They will see a table of both mortgages and transactions with identifying information so that they can remove exactly what they want to remove.
  > ![wireframe_delete_data](wireframe_removing_data.png)
 
-<br><br>**User account settings**: 
-The username will display as default and user can change password.
-> ![wireframe_user_settings](wireframe_user_settings.png)
-
+ 
 <br><br>**User account icon**:
 When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
 > ![wireframe_user_icon_function](wireframe_user_icon_function.png)
 
+<br><br>**User account settings**: 
+The username will display as default and user can change password.
+> ![wireframe_user_settings](wireframe_user_settings.png)
 
 ## 9. Test Framework
 _Unit Testing_
 <br> The main objective is to isolate written code and determine if it works as it should, so we can detect early flaws in code.
 We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality.
-
-
-
 
 ## 10. Conclusion
