@@ -211,11 +211,14 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 
 ## 6. Data Design
 ### 6.1 Entity Relationship Diagram
-> The purpose of the Entity-Relationship Diagram (ERD) is to visually represent the structure of the database for the home loan monitor. By mapping out entities like "User," "mortgage," "override payment,"and so on, along with their attributes and relationships, the ERD will provide a clear understanding of how data is organized within the system. This visualization will aid in the design and development of the tool, ensuring it effectively manages home loans by calculating payments, tracking interest rates, and facilitating management of multiple mortgages. <br>
+> The purpose of the Entity-Relationship Diagram(ERD) is to visually represent the structure of the database for the mortgage calculator,
+By mapping out entities like "User," "mortgage," "transaction, along with their attributes and relationships.
+The ERD will provide a clear understanding of how data is organized within the system. 
+
 
 > ![ERD](ERD.png)
 ### 6.2 Data Flow Diagram
-> The Data Flow Diagram (DFD) serves to illustrate the flow of data within the system, showing how data is input, processed, and output. It helps in understanding the flow of information and the interactions between different components within the software. <br>
+> The Data Flow Diagram (DFD) serves to illustrate the flow of data within the system, showing how data is input, processed, and output. It helps to understand the flow of information and the interactions between different components within the software. <br>
 
 > ![DFD](DFD.png)
 
@@ -282,14 +285,17 @@ The username will display as default and user can change password.
 When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
 > ![wireframe_user_icon_function](wireframe_user_icon_function.png)
 
-<br><br>**User deleting account page**:
-> ![wireframe_user_settings](wireframe_user_settings.png)
 
 
 
 
 
 ## 9. Test Framework
+_Unit Testing_
+<br> The main objective is to isolate written code and determine if it works as it should, so we can detect early flaws in code.
+We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality.
+
+
 
 
 ## 10. Conclusion
