@@ -274,12 +274,9 @@ The ERD will provide a clear understanding of how data is organized within the s
 > The use case diagram outlines the interactions between users and the system, including the primary functions such as calculating mortgage payments, viewing amortization schedules, adjusting parameters, and accessing mortgage features.<br>
 > ![ user case diagram](usercase.png)
 
-### 7.2 Sequence Diagram
-> The sequence diagram is a visual story that shows how different parts of a system interact with each other over time.
-> Each object or component is represented by a box, and the messages or actions between them are shown as arrows. This diagram helps developers understand the order in which things happen in a system and how they're related to each other.
-
 ### 7.2 Component Diagram
-> ![component diagram](Component-Diagram.png)
+> The component diagram shows the overview of how the components of our software will be designed and comunicate with each other. As shown in the diagram below, the software will need to communicate externally with Postgres to store the data, which is then handled by the Data Models, ran through the analysis, amortization and graphing components to then produce the interface. <br>
+> ![component diagram](component_diagram.png)
 
 ### 7.3 Activity Diagram
 >The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.<br>
@@ -292,6 +289,7 @@ The ERD will provide a clear understanding of how data is organized within the s
 > 4. User viewing mortgage activity diagram
 > ![activity_diagram_user_login](activity_diagram_user_login.png)
 ### 7.4 Class Diagram
+> The class diagram shows the structures of the various classes used throughout the application as well as the methods that are inherent to those classes. This helps drive our ovject orientated programming to work smoothly.
 > ![class diagram](Class_Diagram.png)
 
 
@@ -307,34 +305,29 @@ This page gives users options for log-in and sign-up an account also try it out.
 In this page will grab user's username and password details. Alternately, User can still log in if they remember their login details after enter this page, or they can try the calculator without an account.
 > ![signup page](wireframe_sign_up.png)
 
+<br><br>**Index page**: User will be able to view their transaction reports on this page. Where users can edit payment date, delete transaction, add new mortgage and update mortgage.
+![wireframe_index](wireframe_index.png) 
 
-<br><br>**add mortgage page**: After the user logs in or clicks the 'Try it out' button, the adding new mortgage page will be displayed.
+<br><br>**Add mortgage page**: After the user logs in or clicks the 'Try it out' button, the adding new mortgage page will be displayed.
 This page allows users to input new mortgage information.
 > ![wireframe_add_mortgage](wireframe_add_mortgage.png)
-
 
 <br><br>**update mortgage page**: After a new mortgage is established, user will be able to edit mortgage on this page.
 This page will display current mortgage details and allow users to update the information. 
 Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs.  
 > ![wireframe_update_mortgage](wireframe_update_mortgage.png)
 
-
-<br><br>**Index page**: User will be able to view their transaction reports on this page. Where users can edit payment date, delete transaction, add new mortgage and update mortgage.
-![wireframe_index](wireframe_index.png) 
-
+<br><br>**Deleting Data Page**: If users wish to delete existing transactions or mortgages, they can access this page through the removing data button on the index page.
+They will see a table of both mortgages and transactions with identifying information so that they can remove exactly what they want to remove.
+ > ![wireframe_delete_data](wireframe_removing_data.png)
 
 <br><br>**User account settings**: 
 The username will display as default and user can change password.
 > ![wireframe_user_settings](wireframe_user_settings.png)
 
-
 <br><br>**User account icon**:
 When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
-
-
-
-
 
 
 ## 9. Test Framework
