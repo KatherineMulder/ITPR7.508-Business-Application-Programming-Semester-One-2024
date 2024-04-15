@@ -260,9 +260,33 @@ Our project is about creating a mortgage calculator that's easy to use for every
 ## 4. Analysis & Reflection of the Program Specifications
 
 ### 4.1 Graphical User Interface
+  - Understanding Requirements:
+    - Analyze the program specifications to identify the GUI elements, layout, color schemes, and navigation requirements.
+    - Ensure that the GUI design aligns with user preferences and enhances usability.
+  - Impact on Design:
+    - Reflect on how the GUI requirements will influence the overall design of the software.
+    - Consider design patterns, visual elements, and interactions that meet the specified GUI requirements.
 ### 4.2 Identification / Authorization
-### 3.3 User Accounts 
-### 3.4 Client Relation Features 
+  - Clarifying Ambiguities:
+    - Identify any unclear or overlapping requirements related to user identification and authorization.
+    - Seek clarity on access control, authentication methods, and user roles defined in the specifications.
+  - Feasibility Assessment:
+    - Evaluate the feasibility of implementing secure identification and authorization mechanisms.
+    - Consider technical solutions such as authentication protocols, encryption, and access control lists.
+### 3.3 User Accounts
+  - Aligning with Goals:
+    - Reflect on how the user account management requirements support the goals of the software.
+    - Ensure that user registration, profile management, and password policies align with the software objectives.
+  - Scope Management:
+    - Define the scope of user account features such as registration, login, profile customization, and account recovery.
+    - Ensure that user account functionalities are well-defined and integrated within the software scope.
+### 3.4 Client Relation Features
+  - Risk Assessment:
+    - Evaluate potential risks associated with client relation features such as communication channels, feedback mechanisms, and support services.
+    - Identify risks related to user interactions, data privacy, and service quality.
+  - Collaboration and Communication:
+    - Engage with stakeholders to discuss client relation features and gather feedback on communication requirements.
+    - Foster collaboration to ensure that client relation functionalities meet user expectations and business needs. 
 
 ## 5. System Overview 
 > A guide to understanding a system. It tells you what the system does, who uses it, and how it works. 
