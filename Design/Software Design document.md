@@ -106,32 +106,71 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
 
 **Scope Summary:**
 - **Project Includes:**
-1. Development of a mortgage calculator module enabling users to calculate monthly or fortnightly payments based on loan amount, interest rate, and loan term.
-2. Incorporation of the ability to compare multiple loans and interest rates.
-3. Enable users to input variable interest rates over specific periods and automatically update mortgage calculations, as well as to add extra payments or additional costs.
-4. Inclusion of a feature to view historical mortgage data.
-5. Support for managing multiple mortgages, allowing users to handle multiple properties.
-6. Addition of a chart to display mortgage data.
-7. Provision of user-friendly interface webpages.
-8. Inclusion of thorough testing procedures to ensure the software functions as expected and meets quality standards.
-9. Implementation of authentication features for multi-user access.
-10. Provision of comprehensive documentation covering usage instructions.
-11. Design of the software with scalability and performance in mind to handle a growing user base and large datasets.
-12. Analysis & Reflection of Business Issues.
+> The home loan monitor will contain the following key functionalities:
+
+The home loan monitor will contain the following key functionalities:
+1.	Initial set up: 
+•	Users can input principal amounts, interest rates, term years, additional costs, and deposit to initiate a mortgage. 
+Scope: This functionality covers the setup process for creating a new mortgage with all necessary details required for calculation and management. It's important to make sure that users can easily navigate through this setup process and that it accommodates various types of mortgages and inputs.
+
+2.	Update mortgage: 
+•	Users have the ability to modify existing mortgage details, including changing dates, principals, interest rates, terms, overriding payments, and adding comments to transactions.
+Scope: This functionality allows users to make changes to existing mortgage, providing flexibility to accommodate changes in financial circumstances or terms of the loan. Make sure that the system accurately reflects any changes made by users.
+
+3.	Transaction reporting: the system: 
+•	The system will generate transaction reports, providing users with their mortgage activities and financial obligations. 
+Scope: This functionality involves generating detailed reports that summarize mortgage transactions, helping users track their payment history, outstanding balances, and other relevant financial information.
+Make sure the reports are easy to understand and allowing users to insight into their mortgage transactions.
+
+4.	Mortgage editing: 
+•	Users can edit mortgage details, such as adjusting dates to accommodate extra payments or deleting payments as needed.
+Scope: This functionality enables users to make adjustments to specific aspects of their mortgage agreements, such as payment schedules or loan terms, to better suit their needs or preferences. 
+Ensure proper validation to prevent erroneous changes and maintain data accuracy and consistency.
+
+5.	Authentication:
+•	Users can create an account to store their transactions as well as change the username and password.
+Scope: This functionality involves implementing user authentication and account management features.
+•	Ensure that users can easily manage their account without encountering any usability issues. 
+
+6.	Visualization chart:
+•	Provide a graphical chart to visually represent key mortgage data and changes.
+Scope: Implement a graphical chart feature within the system interface to display important metrics such as the amortization schedule, loan balance over time, or payment breakdown (principal vs. interest).
+
+
   
 - **Project Excludes:**
-1. The actual deployment of the website onto designated servers.
-2. Extensive SEO services such as keyword research, on-page optimization, or link building.
-3. Custom graphic design services beyond the scope of interface design and layout.
-4. The necessary maintenance and updates for the software post-project completion.
-5. Advanced financial analysis beyond basic mortgage calculations, such as investment analysis, risk assessment, or portfolio management.
-6. Legal advice related to mortgages, including contract terms, legal obligations, or regulatory compliance. Users would need to consult legal professionals for such matters.
-7. Property valuation services, including home appraisals or estimates of property values.
-8. Tax advice or calculations of property taxes. Users would need to consult with tax professionals or refer to relevant tax regulations.
-9. While homeowners’ insurance and mortgage insurance are integral to homeowners, the software will not calculate insurance premiums.
-10. Integration with banking systems, financial institutions, or real estate databases.
-11. Detailed analytics or reporting features beyond basic mortgage calculations will be excluded.
-12. Complex mortgage types, such as adjustable-rate mortgages (ARMs) with various index rates and margins, will be excluded for simplicity.
+1.	Complex mortgage type:
+•	Adjustable-rate mortgages (ARMs) with various index rates and margins, will be excluded for simplicity.
+Scope: The project will focus on standard mortgage types and will exclude complex mortgage variations for simplicity and clarity.
+
+2.	 Deployment:
+•	The actual deployment of the website onto designated servers.
+Scope: The project will focus on developing the website and its functionalities but will not involve the deployment process onto live servers.
+
+3.	SEO services:
+•	Extensive SEO services such as keyword research, on-page optimization, or link building.
+Scope: The project will not include SEO services beyond basic considerations for website visibility. Specific SEO tasks will be excluded from the scope.
+
+4.	Maintenance and updates:
+•	The necessary maintenance and updates for the software post-project completion.
+Scope: Post-project maintenance and updates will not be covered under this project. This includes ongoing software support and updates.
+
+5.	Advanced financial analysis: 
+•	Advanced financial analysis beyond basic mortgage calculations, such as investment analysis, risk assessment, or portfolio management.
+Scope: The project will focus solely on basic mortgage calculations and will not include advanced financial analysis features.
+
+6.	Legal advice:
+•	Legal advice related to mortgages, including contract terms, legal obligations, or regulatory compliance.
+Scope: Users will need to seek legal advice from professionals for any legal matters related to mortgages.
+
+7.	Tax advice: 
+•	Tax advice or calculations of property taxes.
+Scope: Users will need to consult with tax professionals or refer to relevant tax regulations for any tax-related matters.
+
+8.	Integration with external systems:
+•	Integration with banking systems, financial institutions, or real estate databases.
+Scope: The project will not include integration with external systems beyond the scope of basic mortgage functionalities.
+
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 
@@ -145,45 +184,53 @@ The reason we're writing this document is to explain how the Home Loan Monitor T
    - Description: A graphical representation that shows the flow of data within a system. It visualizes the processes, data stores, and data flows involved in a system or business process.
 
 ### 1.4  Software Development  
-
-1. **Python**:
-   - Definition: Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
-
-2. **Flask Framework**:
-   - Definition: Flask is a micro web framework written in Python.
-   - Description: Flask provides tools, libraries, and technologies for building web applications. It is lightweight and modular, allowing developers to add only the components they need. Flask is known for its simplicity and flexibility.
-
-3. **Postgres**:
-   - Definition: PostgreSQL.
-   - Description: PostgreSQL is an open-source relational database management system (RDBMS) known for its reliability, robustness, and advanced features. It supports SQL and is highly extensible, allowing users to define custom data types, functions, and more.
-
-4. **Pytest**:
-   - Definition: Pytest is a testing framework for Python.
-   - Description: Pytest is a popular testing framework used for writing simple and scalable test cases in Python. It supports fixtures, parameterized testing, and assertions, making it suitable for testing various types of applications and libraries.
-
-5. **HTML**:
-     - Definition: HTML stands for Hypertext Markup Language. It is the standard markup language used to create and design web pages.
-     - Description: HTML provides the basic structure and elements necessary to organize and present content on the World Wide Web.
-
-6. **CSS**:
-   - Definition: Cascading Style Sheets (CSS) is a style sheet language used to describe the presentation of a document written in HTML. 
-   - Description: It allows web developers to control the layout, formatting, and appearance of multiple web pages at once by separating the content from its visual representation.
-
-7. **Bootstrap**:
-   - Definition: Bootstrap is a front-end framework for building responsive and mobile-first websites.
-   - Description: Bootstrap's grid system, CSS styles, and JavaScript plugins allow developers to create visually appealing and user-friendly websites with minimal effort.
-
-8. **JavaScript**:
-   - Definition: JavaScript is a high-level programming language primarily used for creating dynamic and interactive web content.
-   - Description: Enables developers to add interactivity, behavior, and functionality to web pages.
+1. Python:
+Backend logic and data processing.
+2. Flask (Web Framework):
+Handling HTTP requests and responses.
+Routing URLs to appropriate functions.
+Serving HTML templates.
+3. HTML, CSS, Bootstrap (Frontend):
+Structuring and styling the user interface.
+Utilizing Bootstrap for responsive design and pre-styled components.
+4. JavaScript:
+Implementing client-side interactivity (optional).
+Validating user inputs.
+5. Pytest (Testing Framework):
+Writing and running unit tests to ensure code quality and functionality.
+6. Postgres:
+Storing mortgage data.
+Managing transactions and updates.
 
 ## 2. Analysis/ Reflection of Business Issues
-1. Business Objectives:  Our main goal is to develop a user-friendly mortgage calculator for individuals. This tool will help them accurately estimate their mortgage payments based on factors like loan amount, interest rate, and loan term.
-2. Business Processes: Our software will simplify the process of estimating mortgage payments. Users will be able to input their loan details, and the software will automatically calculate and present the results clearly.
-3. Regulatory and Compliance Requirements: Since the software is for individual use, it doesn't fall under specific financial regulations.
-4. Risk Analysis: TThere are some technical risks due to our team's limited experience, but we can manage these with guidance from our lecture. Limited resources and time pose business risks, so we need to make sure to meet the declines.
-5. Reflection on Business Issues: Our project aligns well with our team's capabilities. Guidance from our instructor will help us overcome challenges. We're focusing on creating value for individual users without unnecessary complexity.
-6. Recommendations: Prioritize simplicity and usability. Maintain regular communication with our lecture for guidance. Break the project into manageable tasks with realistic milestones for tracking progress.
+The main purpose of this software is to develop a mortgage calculator capable of tracking multiple transactions and providing insights into mortgage maturity. We have decided to use a programming language to develop this software throughout the entire project. 
+We will provide software design description documentation to provide more in-depth technical information. From the users' views and expectations, the ultimate goal is to be able to track multiple mortgages and figure out how much actual savings can be achieved by making extra payments.
+For each functionality:
+1.	The first stage of initial set-up:
+•	Analysis: The initial setup process is crucial as it sets the foundation for the entire mortgage management system. Users need to input key details accurately to ensure the calculations and management of their mortgage are done correctly.
+•	Reflection: To address this business issue the system must prioritize simplicity and straightforwardness in the setup process. Providing clear guidance and validation checks can help mitigate errors and ensure users start their mortgage journey smoothly.
+
+2.	Update mortgage: 
+•	Analysis: Changes in financial circumstances or loan terms are common occurrences for mortgage holders. Users need the flexibility to update their mortgage details easily and accurately within the system.
+•	Reflection: The system needs to empower users with the ability to make these updates. Ensuring that changes are reflected accurately.
+
+3.	Transaction reporting: 
+•	Analysis: Transaction reports provide users with insights into their payment history and remaining balances.
+•	Reflection: Generating detailed and comprehensible transaction reports is important for users to track their historical data and they will be able to get insights from the reports.
+
+4.	Mortgage editing:
+•	Analysis: Mortgage agreements may need adjustments over time to accommodate changes in circumstances or preferences. Users require the ability to edit specific details of their mortgage while maintaining data accuracy and consistency.
+•	Reflection: Implementing editing features is essential to meet users' needs.
+
+5.	Visualization chart:
+•	Analysis: Visual representations of mortgage data can enhance users' understanding of their financial status and payment trends. Users require graphical charts that provide clear insights into their mortgage details.
+•	Reflection: Implementing visual charts can enhance user experience and engagement.
+
+6.	Authentication: 
+•	Analysis: Users need a process to create and manage their accounts.
+•	Reflection: Building an authentication system that allows users to log in, log out, change passwords, and delete accounts is essential.
+
+Our project is about creating a mortgage calculator that's easy to use for everyone. We're focusing on keeping it simple. If we run into any difficult parts, our lecture will help us figure them out. To deal with the limited time and resources we have, we're breaking the work into smaller tasks with achievable goals. Since our tool is for regular users and doesn't have to follow any special rules, we're making sure it's helpful without adding too many complicated things.
 
 ## 3. Key areas of software application issues
 
@@ -283,7 +330,7 @@ The username will display as default and user can change password.
 
 <br><br>**User account icon**:
 When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
-> ![wireframe_user_icon_function](wireframe_user_icon_function.png)
+> ![wireframe_user_popup_window](wireframe_user_popup_window.png)
 
 
 
