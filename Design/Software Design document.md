@@ -170,20 +170,58 @@ _Note: Please read URS for more information_
 ## 3. Key areas of software application issues
 
 ### 3.1 Reliability 
+  - Error Handling
+  - Data Integrity
+  - Backup/Recovery
 ### 3.2 Scalability
+  - Self Explainatory
 ### 3.3 Performance
+  - Responsetimes, Throughtput/Scalability
+  - Bottlenecks performance issues
 ### 3.4 Maintainability
+  - Maintainability, modularity and extensibility
+  - Code Standards, documentation requirements and version control
+  - How changes and updates will be handled
 ### 3.5 Security
+  - Identifying vulnerabilities and threats
+  - Define measures to protect data and unauthorised access
+  - Authentication, authorization, encryption and data privacy
 ### 3.6 Usability 
+  - UI/UX design
+  - Accessability and navigation
 ### 3.7 Compatibility
-
+  - Address different compatibilities
 
 ## 4. Analysis & Reflection of the Program Specifications
 
 ### 4.1 Graphical User Interface
+  - Understanding Requirements:
+    - Analyze the program specifications to identify the GUI elements, layout, color schemes, and navigation requirements.
+    - Ensure that the GUI design aligns with user preferences and enhances usability.
+  - Impact on Design:
+    - Reflect on how the GUI requirements will influence the overall design of the software.
+    - Consider design patterns, visual elements, and interactions that meet the specified GUI requirements.
 ### 4.2 Identification / Authorization
-### 3.3 User Accounts 
-### 3.4 Client Relation Features 
+  - Clarifying Ambiguities:
+    - Identify any unclear or overlapping requirements related to user identification and authorization.
+    - Seek clarity on access control, authentication methods, and user roles defined in the specifications.
+  - Feasibility Assessment:
+    - Evaluate the feasibility of implementing secure identification and authorization mechanisms.
+    - Consider technical solutions such as authentication protocols, encryption, and access control lists.
+### 3.3 User Accounts
+  - Aligning with Goals:
+    - Reflect on how the user account management requirements support the goals of the software.
+    - Ensure that user registration, profile management, and password policies align with the software objectives.
+  - Scope Management:
+    - Define the scope of user account features such as registration, login, profile customization, and account recovery.
+    - Ensure that user account functionalities are well-defined and integrated within the software scope.
+### 3.4 Client Relation Features
+  - Risk Assessment:
+    - Evaluate potential risks associated with client relation features such as communication channels, feedback mechanisms, and support services.
+    - Identify risks related to user interactions, data privacy, and service quality.
+  - Collaboration and Communication:
+    - Engage with stakeholders to discuss client relation features and gather feedback on communication requirements.
+    - Foster collaboration to ensure that client relation functionalities meet user expectations and business needs. 
 
 ## 5. System Overview 
 > A guide to understanding a system. It tells you what the system does, who uses it, and how it works. 
@@ -256,21 +294,18 @@ Users can analysis override payment and add extra costs if there is any. A comme
 They will see a table of both mortgages and transactions with identifying information so that they can remove exactly what they want to remove.
  > ![wireframe_delete_data](wireframe_removing_data.png)
 
-<br><br>**User account settings**: 
-The username will display as default and user can change password.
-> ![wireframe_user_settings](wireframe_user_settings.png)
-
+ 
 <br><br>**User account icon**:
 When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
 
+<br><br>**User account settings**: 
+The username will display as default and user can change password.
+> ![wireframe_user_settings](wireframe_user_settings.png)
 
 ## 9. Test Framework
 _Unit Testing_
 <br> The main objective is to isolate written code and determine if it works as it should, so we can detect early flaws in code.
 We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality.
-
-
-
 
 ## 10. Conclusion
