@@ -42,43 +42,6 @@ Table of Contents
     - [8.1 Wireframes](#81-wireframes)
   - [9. Test Framework](#9-test-framework)
   - [10. Conclusion](#10-conclusion)
-- [Software Design Description](#software-design-description)
-  - [For  Home Loan Monitor](#for--home-loan-monitor)
-- [Table of Contents](#table-of-contents)
-  - [Revision History](#revision-history)
-  - [1. Introduction](#1-introduction)
-    - [1.1 Document Purpose](#11-document-purpose)
-    - [1.2 Subject Scope](#12-subject-scope)
-    - [1.3 Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-      - [Data Design Diagrams](#data-design-diagrams)
-      - [Software Development](#software-development)
-  - [2. Analysis/ Reflection of Business Issues](#2-analysis-reflection-of-business-issues)
-  - [3. Key areas of software application issues](#3-key-areas-of-software-application-issues)
-    - [3.1 Reliability](#31-reliability)
-    - [3.2 Scalability](#32-scalability)
-    - [3.3 Performance](#33-performance)
-    - [3.4 Maintainability](#34-maintainability)
-    - [3.5 Security](#35-security)
-    - [3.6 Usability](#36-usability)
-    - [3.7 Compatibility](#37-compatibility)
-  - [4. Analysis \& Reflection of the Program Specifications](#4-analysis--reflection-of-the-program-specifications)
-    - [4.1 Graphical User Interface](#41-graphical-user-interface)
-    - [4.2 Identification / Authorization](#42-identification--authorization)
-    - [4.3 User Accounts](#43-user-accounts)
-    - [4.4 Client Relation Features](#44-client-relation-features)
-  - [5. System Overview](#5-system-overview)
-  - [6. Data Design](#6-data-design)
-    - [6.1 Entity Relationship Diagram](#61-entity-relationship-diagram)
-    - [6.2 Data Flow Diagram](#62-data-flow-diagram)
-  - [7. System Design](#7-system-design)
-    - [7.1 User Case Diagram](#71-user-case-diagram)
-    - [7.2 Sequence Diagram](#72-sequence-diagram)
-    - [7.3 Activity Diagram](#73-activity-diagram)
-    - [7.4 Class Diagram](#74-class-diagram)
-  - [8. Interface Design](#8-interface-design)
-    - [8.1 Wireframes](#81-wireframes)
-  - [9. Test Framework](#9-test-framework)
-  - [10. Conclusion](#10-conclusion)
   - [11. Definitions, Acronyms and Abbreviations](#11-definitions-acronyms-and-abbreviations)
       - [Data Design Diagrams](#data-design-diagrams)
 ## Revision History
@@ -92,7 +55,8 @@ Table of Contents
 The SDD serves as a detailed guide for developers, stakeholders, and users, providing insights into the software's functionality, structure, and behavior. This including data design, system design, interface design, and testing framework. <br>
 ### 1.1 Document Purpose
 The reason we're writing this document is to explain how the Home Loan Monitor Tool will work and how it's built. We want to make it easy for everyone involved to understand how the software will function and what it will look like.
-* Users/ Project manager: This document serves as a guide for both project managers and users of the home loan management tool. It provides the software's functionality, design rationale, usability aspects, and system behavior. By understanding these details, users and project manager can make informed decisions about the project, while users can utilize the software to meet their needs.
+We have also conducted a user required specifications document defines what users expect from this project.
+* Users/ Project manager: This document serves as a guide for both project managers and users of the mortgage management tool. It provides the software's functionality, design rationale, usability aspects, and system behavior. By understanding these details, users and project manager can make informed decisions about the project, while users can utilize the software to meet their needs.
 * Developers: This guide helps developers understand how the software is designed, the important decisions made about its structure, and how it's built. It's like a roadmap for them to turn requirements into a working program.
 ### 1.2 Subject Scope
 **Scope Summary:**
@@ -145,31 +109,14 @@ Scope: Users will need to consult with tax professionals or refer to relevant ta
 •	Integration with banking systems, financial institutions, or real estate databases.
 Scope: The project will not include integration with external systems beyond the scope of basic mortgage functionalities.
 ## 2. Analysis/ Reflection of Business Issues
-The main purpose of this software is to develop a mortgage calculator capable of tracking multiple transactions and providing insights into mortgage maturity. We have decided to use a programming language to develop this software throughout the entire project. 
-We will provide software design description documentation to provide more in-depth technical information. From the users' views and expectations, the ultimate goal is to be able to track multiple mortgages and figure out how much actual savings can be achieved by making extra payments.
-For each functionality:
-1.	The first stage of initial set-up:
-•	Analysis: The initial setup process is crucial as it sets the foundation for the entire mortgage management system. Users need to input key details accurately to ensure the calculations and management of their mortgage are done correctly.
-•	Reflection: To address this business issue the system must prioritize simplicity and straightforwardness in the setup process. Providing clear guidance and validation checks can help mitigate errors and ensure users start their mortgage journey smoothly.
-2.	Update mortgage: 
-•	Analysis: Changes in financial circumstances or loan terms are common occurrences for mortgage holders. Users need the flexibility to update their mortgage details easily and accurately within the system.
-•	Reflection: The system needs to empower users with the ability to make these updates. Ensuring that changes are reflected accurately.
-3.	Transaction reporting: 
-•	Analysis: Transaction reports provide users with insights into their payment history and remaining balances.
-•	Reflection: Generating detailed and comprehensible transaction reports is important for users to track their historical data and they will be able to get insights from the reports.
-4.	Mortgage editing:
-•	Analysis: Mortgage agreements may need adjustments over time to accommodate changes in circumstances or preferences. Users require the ability to edit specific details of their mortgage while maintaining data accuracy and consistency.
-•	Reflection: Implementing editing features is essential to meet users' needs.
-5.	Visualization chart:
-•	Analysis: Visual representations of mortgage data can enhance users' understanding of their financial status and payment trends. Users require graphical charts that provide clear insights into their mortgage details.
-•	Reflection: Implementing visual charts can enhance user experience and engagement.
-6.	Authentication: 
-•	Analysis: Users need a process to create and manage their accounts.
-•	Reflection: Building an authentication system that allows users to log in, log out, change passwords, and delete accounts is essential.
-
-Our project is about creating a mortgage calculator that's easy to use for everyone. We're focusing on keeping it simple. If we run into any difficult parts, our lecture will help us figure them out. To deal with the limited time and resources we have, we're breaking the work into smaller tasks with achievable goals. Since our tool is for regular users and doesn't have to follow any special rules, we're making sure it's helpful without adding too many complicated things.
+1. Business Objectives:  Our main goal is to develop a user-friendly mortgage calculator for individuals. This tool will help them accurately estimate their mortgage payments based on factors like loan amount, interest rate, and loan term.
+2. Business Processes: Our software will simplify the process of estimating mortgage payments. Users will be able to input their loan details, and the software will automatically calculate and present the results clearly.
+3. Regulatory and Compliance Requirements: Since the software is for individual use, it doesn't fall under specific financial regulations.
+4. Risk Analysis: There are some technical risks due to our team's limited experience, but we can manage these with guidance from our lecture. Limited resources and time pose business risks, so we need to make sure to meet the declines.
+5. Reflection on Business Issues: Our project aligns well with our team's abilities. Guidance from our instructor will help us overcome challenges. We're focusing on creating value for individual users without unnecessary complexity.
+6. Recommendations: Prioritize simplicity and usability. Maintain regular communication with our lecture for guidance. Break the project into manageable tasks with realistic milestones for tracking progress.
+_Note: Please read URS for more information_
 ## 3. Analysis & Reflection of the Program Specifications
-understanding the requirements, constraints and goals and how they shape desing and implementation
 ### 3.1 Graphical User Interface
   - Understanding Requirements:
     - Analyze the program specifications to identify the GUI elements, layout, color schemes, and navigation requirements.
