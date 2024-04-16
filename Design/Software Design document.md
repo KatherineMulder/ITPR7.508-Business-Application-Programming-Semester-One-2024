@@ -110,12 +110,39 @@ Scope: Users will need to consult with tax professionals or refer to relevant ta
 •	Integration with banking systems, financial institutions, or real estate databases.
 Scope: The project will not include integration with external systems beyond the scope of basic mortgage functionalities.
 ## 2. Analysis/ Reflection of Business Issues
-1. Business Objectives:  Our main goal is to develop a user-friendly mortgage calculator for individuals. This tool will help them accurately estimate their mortgage payments based on factors like loan amount, interest rate, and loan term.
-2. Business Processes: Our software will simplify the process of estimating mortgage payments. Users will be able to input their loan details, and the software will automatically calculate and present the results clearly.
-3. Regulatory and Compliance Requirements: Since the software is for individual use, it doesn't fall under specific financial regulations.
-4. Risk Analysis: There are some technical risks due to our team's limited experience, but we can manage these with guidance from our lecture. Limited resources and time pose business risks, so we need to make sure to meet the declines.
-5. Reflection on Business Issues: Our project aligns well with our team's abilities. Guidance from our instructor will help us overcome challenges. We're focusing on creating value for individual users without unnecessary complexity.
-6. Recommendations: Prioritize simplicity and usability. Maintain regular communication with our lecture for guidance. Break the project into manageable tasks with realistic milestones for tracking progress.
+For each functionality: <br>
+1.	The first stage of initial set-up: <br>
+•	Analysis: The initial setup process is crucial as it sets the foundation for the entire mortgage management system. Users need to input key details accurately to ensure the calculations and management of their mortgage are done correctly.
+•	Reflection: To address this business issue the system must prioritize simplicity and straightforwardness in the setup process. Providing clear guidance and validation checks can help mitigate errors and ensure users start their mortgage journey smoothly.
+
+2.	Update mortgage: <br>
+•	Analysis: Changes in financial circumstances or loan terms are common occurrences for mortgage holders. Users need the flexibility to update their mortgage details easily and accurately within the system.
+•	Reflection: The system needs to empower users with the ability to make these updates. Ensuring that changes are reflected accurately.
+
+3.	Transaction reporting: 
+•	Analysis: Transaction reports provide users with insights into their payment history and remaining balances.
+•	Reflection: Generating detailed and comprehensible transaction reports is important for users to track their historical data and they will be able to get insights from the reports.
+
+4.	Mortgage editing:
+•	Analysis: Mortgage agreements may need adjustments over time to accommodate changes in circumstances or preferences. Users require the ability to edit specific details of their mortgage while maintaining data accuracy and consistency. <br>
+•	Reflection: Implementing editing features is essential to meet users' needs.
+
+5.	Visualization chart:
+•	Analysis: Visual representations of mortgage data can enhance users' understanding of their financial status and payment trends. Users require graphical charts that provide clear insights into their mortgage details.
+•	Reflection: Implementing visual charts can enhance user experience and engagement.
+
+6.	Authentication: 
+•	Analysis: Users need a process to create and manage their accounts.
+•	Reflection: Building an authentication system that allows users to log in, log out, change passwords, and delete accounts is essential.
+
+7.	Personalization: 
+•	Analysis: Users should have the flexibility to edit or delete historical transactions to ensure the accuracy of their financial records.
+•	Reflection: Users with full control over their dashboard and mortgage details and implement user-friendly editing and deletion options for historical transactions, allowing users to easily make changes as needed.
+
+8.	Intuitive interface:
+•	Analysis: An intuitive interface is important for ensuring that users can easily navigate the mortgage management system and access its features without confusion.
+•	Reflection: We need to conduct usability testing and gather feedback from users to identify any pain points or areas of confusion. Based on this feedback, we can refine the interface design to ensure that it meets users' needs and expectations. Regular usability evaluations and updates are essential to maintain the system's usability over time.
+
 _Note: Please read URS for more information_
 ## 3. Analysis & Reflection of the Program Specifications
 ### 3.1 Graphical User Interface
