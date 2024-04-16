@@ -146,7 +146,7 @@ For each functionality: <br>
 _Note: Please read URS for more information_
 ## 3. Analysis & Reflection of the Program Specifications
 ### 3.1 Graphical User Interface
-The users will be greeted with a login pafge to be able to access their accounts. Their will also be a seperate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for a password change or to delete thier account<br>
+The users will be greeted with a login page to be able to access their accounts. Their will also be a seperate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for a password change or to delete thier account<br>
 The program needs to have a simple interface desgined to quickly provide analysis of a mortgage. To be able to do this, the main page of the application needs to contain all of the information relating to the analysis of the mortgage, primarily a table of summarised analysis, a graph showing the change in equity over time, and an amortization table showing specific timestamped information.<br>
 There also needs to be a seperate interface to allow for the creation of a mortgage and transaction. Due to the amount of information required for each of these sections, the will need their own page. The user then should be able to see some of the analysis for the information they enter beofre saving it permenately and return to the home page.<br>
 Lastly, there will be a page to allow users to remove mortages and transactions that they want to remove, listing them out showing identifying information so that they can correct select which ones to remove.
@@ -269,7 +269,20 @@ The username will display as default and user can change password.
 ## 9. Test Framework
 _Unit Testing_
 <br> The main objective is to isolate written code and determine if it works as it should, so we can detect early flaws in code.
-We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality.
+We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality. <br>
+<br>
+Code example:
+<br> Use a simple code here to demo what we will do for our unit testing.
+This code defines a class MortgageCalculator with properties and setters for attributes like mortgage principal, interest rate, and extra costs, allowing for calculations related to mortgages by setting up the initial parameters and validating inputs.
+![unitTesting_example.png](unit_testing_example.png)
+
+<br> 
+We will use Pytest for the MortgageCalculator class.
+It checks if the initialized mortgage object has the correct principal value
+and whether it raises a ValueError when non-numeric values are passed for initialization parameters.
+
+![pytest_example.png](pytest_example.png)
+
 ## 10. Conclusion
 ## 11 Definitions, Acronyms and Abbreviations
 #### Data Design Diagrams 
