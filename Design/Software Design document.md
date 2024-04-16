@@ -17,9 +17,10 @@ Table of Contents
   - [2. Analysis/ Reflection of Business Issues](#2-analysis-reflection-of-business-issues)
   - [3. Analysis \& Reflection of the Program Specifications](#3-analysis--reflection-of-the-program-specifications)
     - [3.1 Graphical User Interface](#31-graphical-user-interface)
-    - [3.2 Identification / Authorization](#32-identification--authorization)
-    - [3.3 User Accounts](#33-user-accounts)
-    - [3.4 Client Relation Features](#34-client-relation-features)
+    - [3.2 User Accounts](#32-user-accounts)
+    - [3.3 Data Entry Structure](#33-data-entry-structure)
+    - [3.4 Analytical Functionality](#34-analytical-functionality)
+    - [3.5 Data Removal Processes](#35-data-removal-processes)
   - [4. Key areas of software application issues](#4-key-areas-of-software-application-issues)
     - [4.1 Reliability](#41-reliability)
     - [4.2 Scalability](#42-scalability)
@@ -66,14 +67,14 @@ The home loan monitor will contain the following key functionalities:
 •	Users can input principal amounts, interest rates, term years, additional costs, and deposit to initiate a mortgage. 
 Scope: This functionality covers the setup process for creating a new mortgage with all necessary details required for calculation and management. It's important to make sure that users can easily navigate through this setup process and that it accommodates various types of mortgages and inputs.
 > 2.	Update mortgage: 
-•	Users have the ability to modify existing mortgage details, including changing dates, principals, interest rates, terms, overriding payments, and adding comments to transactions.
+•	Users have the ability to modify existing mortgage details, including changing the principal, interest rates, terms, overriding payments, and adding comments to transactions.
 Scope: This functionality allows users to make changes to existing mortgage, providing flexibility to accommodate changes in financial circumstances or terms of the loan. Make sure that the system accurately reflects any changes made by users.
 > 3.	Transaction reporting: the system: 
 •	The system will generate transaction reports, providing users with their mortgage activities and financial obligations. 
 Scope: This functionality involves generating detailed reports that summarize mortgage transactions, helping users track their payment history, outstanding balances, and other relevant financial information.
 Make sure the reports are easy to understand and allowing users to insight into their mortgage transactions.
 > 4.	Mortgage editing: 
-•	Users can edit mortgage details, such as adjusting dates to accommodate extra payments or deleting payments as needed.
+•	Users can edit mortgage details, such as adjusting extra payments or deleting payments as needed.
 Scope: This functionality enables users to make adjustments to specific aspects of their mortgage agreements, such as payment schedules or loan terms, to better suit their needs or preferences. 
 Ensure proper validation to prevent erroneous changes and maintain data accuracy and consistency.
 > 5.	Authentication:
@@ -118,33 +119,21 @@ Scope: The project will not include integration with external systems beyond the
 _Note: Please read URS for more information_
 ## 3. Analysis & Reflection of the Program Specifications
 ### 3.1 Graphical User Interface
-  - Understanding Requirements:
-    - Analyze the program specifications to identify the GUI elements, layout, color schemes, and navigation requirements.
-    - Ensure that the GUI design aligns with user preferences and enhances usability.
-  - Impact on Design:
-    - Reflect on how the GUI requirements will influence the overall design of the software.
-    - Consider design patterns, visual elements, and interactions that meet the specified GUI requirements.
-### 3.2 Identification / Authorization
-  - Clarifying Ambiguities:
-    - Identify any unclear or overlapping requirements related to user identification and authorization.
-    - Seek clarity on access control, authentication methods, and user roles defined in the specifications.
-  - Feasibility Assessment:
-    - Evaluate the feasibility of implementing secure identification and authorization mechanisms.
-    - Consider technical solutions such as authentication protocols, encryption, and access control lists.
-### 3.3 User Accounts
-  - Aligning with Goals:
-    - Reflect on how the user account management requirements support the goals of the software.
-    - Ensure that user registration, profile management, and password policies align with the software objectives.
-  - Scope Management:
-    - Define the scope of user account features such as registration, login, profile customization, and account recovery.
-    - Ensure that user account functionalities are well-defined and integrated within the software scope.
-### 3.4 Client Relation Features
-  - Risk Assessment:
-    - Evaluate potential risks associated with client relation features such as communication channels, feedback mechanisms, and support services.
-    - Identify risks related to user interactions, data privacy, and service quality.
-  - Collaboration and Communication:
-    - Engage with stakeholders to discuss client relation features and gather feedback on communication requirements.
-    - Foster collaboration to ensure that client relation functionalities meet user expectations and business needs. 
+The users will be greeted with a login pafge to be able to access their accounts. Their will also be a seperate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for a password change or to delete thier account<br>
+The program needs to have a simple interface desgined to quickly provide analysis of a mortgage. To be able to do this, the main page of the application needs to contain all of the information relating to the analysis of the mortgage, primarily a table of summarised analysis, a graph showing the change in equity over time, and an amortization table showing specific timestamped information.<br>
+There also needs to be a seperate interface to allow for the creation of a mortgage and transaction. Due to the amount of information required for each of these sections, the will need their own page. The user then should be able to see some of the analysis for the information they enter beofre saving it permenately and return to the home page.<br>
+Lastly, there will be a page to allow users to remove mortages and transactions that they want to remove, listing them out showing identifying information so that they can correct select which ones to remove.
+### 3.2 User Accounts
+User Accounts will be implemented in the software to seperate mortgages (and subsequtially transactions) from others users, with no access whatsoever being allowed between users. These accounts will require a password to be made in order to secure the account. Primarily due to the scale of the project, there is no plans to include an admin account to access and manage users from within the application itself, but there will be a way to acess the information from the database end, allowing changes to be made there if neccessary.
+### 3.3 Data Entry Structure
+With the calculator requiring a lot of specific information for both the mortgage and transaction, the structure that the entry will be keep simple and straightforward to help users correctly entry information into the right field. All entry fields will have a description next to their titles outlining correct formatting. Additionally, the entry fields in the transaction creation screen will include automatically inputted data from the mortgage that is selected so the users only need to adjust the information in the fields that need changes. Lastly, if any information is entered incorrectly, the entry fields will highlight red and a small error message will be displayed to let the user know that something in this field is wrong.
+### 3.4 Analytical Functionality
+The application will need to handle a lot of analysis and most of it will be done as a user creates a mortgage or transaction to show in the page before a user confirms this is correct. This analysis will include the Estimated Repayment, a payment breakdown of interest and principal and information regarding the mortgage maturity (including payments over full term, full term to amortize, interest over the full term and principal + interest). It is important to understand that in the transaction creation screen there will be added information to showcase any extra payements, the payments over the reduced term, Estimated reduced term to amortize, interest over the reduced term, interest saved over the reduced term and principal + interest over the reduced term.<br>
+Then this information will then be used to generate a graph (viewable on both the main page and creation pages) and an Amortization table (main page only) based on the state of the mortgage. The state will be determined by combining the inital state of the mortage and applying any transactional changes that have occured to it at the correct time. Users will also be able to apply a date to the analysis on the main page, only seeing the start of the mortgage from that starting data.
+### 3.5 Data Removal Processes
+Another important function of the application will be the ability to remove data from the system. User will be able to remove any mortgages or transactions they want through a single page which will show a table for each type of data, containing all of their entries. Transactions will show the date they were applied from, a comment on the purpose of the transaction, and the mortgage that it relates to. For mortgages, it will show the start date of the mortage, the name given to the mortgage as well as the current balance remaining on the mortgage. Then, next to all of thees entries will be a delete button that if clicked will show a popup confirming the deletion of the selected entry, and if yes is selected the data will be removed.<br>
+There will also be a way to completely delete the account if the user decides to. This option will be accessable under the user setting page, and if selected and confirmed it will delete the account and return the to the login page.<br>
+For all these forms of data removal, if data that is reliant on that deleted entry exists, it will also be removed, e.g. if a user deleted a mortgage, all connected transactions will be removed as well.
 ## 4. Key areas of software application issues
 There is some important areas our software will need to be able handle/work with in order to deliver a complete solution to the client.
 ### 4.1 Reliability 
