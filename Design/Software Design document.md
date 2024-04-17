@@ -33,7 +33,7 @@ Katherine Mulder & Alex Borawski
     - [4.6 Usability](#46-usability)
     - [4.7 Compatibility](#47-compatibility)
   - [5. System Overview](#5-system-overview)
-    - [5.1 Software Development](#51-software-development)
+    - [5.1 Software Development](#51-software-development-technologies-and-tools)
   - [6. Data Design](#6-data-design)
     - [6.1 Entity Relationship Diagram](#61-entity-relationship-diagram)
     - [6.2 Data Flow Diagram](#62-data-flow-diagram)
@@ -214,64 +214,55 @@ Although this software isn't intended to be scaled up to a larger audience, desi
 
 ### 4.3 Performance
 
-- Responsiveness, Throughput/Scalability
-- Bottlenecks performance issues
+The performance of the application is important because the analysis should be readily available to the user when they log into the application. This is the biggest bottleneck in the application and will require deisgning the code to load analyses as quickly as possible. Multi-threading is a potential soultion, but most certainly we will be loading all the analyses of a user when they login to the application to speed up the load times.
 
 ### 4.4 Maintainability
 
-- Maintainability, modularity and extensibility
-- Code Standards, documentation requirements and version control
-- How changes and updates will be handled
+Although our involvement in the application will cease once the development is complete, we will still develop the application to be easily maintained well into the future. The main way we will deliver on this is designin the code to be modular with clear intidciations as to what each section of the code is responsible for. Comments within the code will be in depth, covering the functionality of what each section does, how it does it, and what isnt included on launch. This will help futute developers be able to understand what is happening within the software, and how they can quickly edit, add or emove sections of it to suit their needs.
 
 ### 4.5 Security
 
-- Identifying vulnerabilities and threats
-- Define measures to protect data and unauthorized access
-- Authentication, authorization, encryption and data privacy
+It will be important to handle data securely within our application, especially as we are dealing with user's senstive financial information. The most likely vulnerability is that users might be able to access other user's data without authorization, which means that we need to include robust methods to prevent this from happening.
+
+Another potential vulnerability is entering malicous data into the data entry fields throughout the application. In order to prevent this, we will include a lot of data validation, ranging from type checking, length checking and value checking.
+
+We will also want to secure sensitive data that even administrators should not directly know as well. To do this, we should use a form of encryption make the data much hard to access without knowing how to decrypt it. This will help secure the data, making it harder gain access to user's accounts.
 
 ### 4.6 Usability
 
-- UI/UX design
-- Accessibility and navigation
+We also need to make sure that the application is very easy to understand and navigate through. To do so, we will need to deisgn the pages, and the contections between them, to be easily identifiable. By clearly showing the user what is present on a page and what is to be expected on the next page, it will make the application as a whole a lot more easy to understand.
+
+Another aspect of making the software easy to use is by giving clear feedback to any erorrs inputted by the user as well as clearly highlighting the what each part of the software is doing. To acheive this, we will provide clear feedback to the user after they try and enter incorrect data explaining what they did wrong. By also including description alongside any data input or display areas, we will make it much more clear what is expected or shown to the user.
 
 ### 4.7 Compatibility
 
-- Address different compatibilities
+Our software should be desgined in a manner that makes it more compatible with potential changes in the future environment in which it is operating. With this in mind, we will develop the software to easily supprot changes in the way the app is used. By isolating the ways in which the software accesses a database and how it displays itself on a web browser, we can make it easier to swap out or augment how the application is used.
 
 ## 5. System Overview
 
-> A guide to understanding a system. It tells you what the system does, who uses it, and how it works.
-> It also mentions things like its parts, how it connects to other systems, what technology it uses, and how it's kept secure and working well.
-> It's like a map that helps you get the big picture before diving into the details.
-> In the system overview selection here will provide datat design, system design and interface design.
+Factoring in everything discussed in the previous sections of the document, we have decided to develop an application that connect to an external database in order to save user's data. This would then connect to our software in ordfer to  create analyses of the user's mortgage(s) and then display this information to the user via a web browser.
 
-### 5.1 Software Development
+This design approach allows us to keep the application small and lightweight, extremely portable and modular, allowing for different useages to be added or removed in the future, whilst also providing flexibility in how the program is presented to the user via a Graphical User Interface, especailly as the default browser of the hardware will be used to render the interface.
 
-1. Python:
-Backend logic and data processing.
-2. Flask (Web Framework):
-Handling HTTP requests and responses.
-Routing URLs to appropriate functions.
-Serving HTML templates.
-3. HTML, CSS, Bootstrap (Frontend):
-Structuring and styling the user interface.
-Utilizing Bootstrap for responsive design and pre-styled components.
-4. JavaScript:
-Implementing client-side interactivity (optional).
-Validating user inputs.
-5. Pytest (Testing Framework):
-Writing and running unit tests to ensure code quality and functionality.
-6. Postgres:
-Storing mortgage data.
-Managing transactions and updates.
+Below we chosen the specific software we will use to devlop this application and why it was chosen over other similar options.
+
+### 5.1 Software Development Technologies and Tools
+
+For the backend logic and data processing, we have decided to use Python as the language for programming this. This decision was reached by finding a language that designed to be more readable to  other developers, whilst also providing simple ways to import potential packages that might be neccesary for the project.
+
+By working with a web browser, we have elected to use HTML, CSS and Javascript to create and design our web pages for the project. We will also utilize bootstrap to acess pre-designed features to make the software more standardized.
+
+We decicded to follow a Web framework to make the routing anmd devliery of web pags more streamlined and easier to both understand and modify in the future. With these im mind, we chose Flask as out framework as it is simple to setup and configure, as well as understand what each part of the software does.
+
+To handle our data storage, we have decided to use Postgres. The main reason we decided to use Postgres was because of how simple is is to setup and that it can handle small to large data extremely well, meaning that if the software was to be scaled to meet a larger audience, it can still handle the data with ease.
+
+To test our software, we will make use of Pytest as it automates the unit tesing of our software, ensuring that the code can handle all predicted problems correctly.
 
 ## 6. Data Design
 
 ### 6.1 Entity Relationship Diagram
 
-The purpose of the Entity-Relationship Diagram(ERD) is to visually represent the structure of the database for the mortgage calculator,
-By mapping out entities like "User," "mortgage," "transaction, along with their attributes and relationships.
-The ERD will provide a clear understanding of how data is organized within the system.
+The purpose of the Entity-Relationship Diagram(ERD) is to visually represent the structure of the database for the mortgage calculator. By mapping out entities like "User," "mortgage," "transaction, along with their attributes and relationships. The ERD will provide a clear understanding of how data is organized within the system.
 ![ERD](ERD.png)
 
 ### 6.2 Data Flow Diagram
