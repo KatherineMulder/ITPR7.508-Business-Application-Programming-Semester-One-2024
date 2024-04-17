@@ -8,7 +8,7 @@
 Table of Contents
 =================
 - [Software Design Description](#software-design-description)
-  - [For  Home Loan Monitor](#for--home-loan-monitor)
+  - [For Home Loan Monitor](#for--home-loan-monitor)
 - [Table of Contents](#table-of-contents)
   - [Revision History](#revision-history)
   - [1. Introduction](#1-introduction)
@@ -53,7 +53,7 @@ Table of Contents
 |      |         |                     |           |
 ## 1. Introduction 
 > The following Software Design Description document outlines the design and architecture of a proposed Home Loan Monitor Tool. This tool aims to simplify mortgage management processes for individuals by offering a user-friendly interface and comprehensive features. It's important to note that this proposal is intended for personal use only and is not designed for financial advisers or professional consultation.<br><br>
-The SDD serves as a detailed guide for developers, stakeholders, and users, providing insights into the software's functionality, structure, and behavior. This including data design, system design, interface design, and testing framework. <br>
+The SDD serves as a detailed guide for developers, stakeholders, and users, providing insights into the software's functionality, structure, and behavior. This includes data design, system design, interface design, and testing framework. <br>
 ### 1.1 Document Purpose
 The reason we're writing this document is to explain how the Home Loan Monitor Tool will work and how it's built. We want to make it easy for everyone involved to understand how the software will function and what it will look like.
 We have also conducted a user required specifications document defines what users expect from this project.
@@ -72,7 +72,7 @@ Scope: This functionality allows users to make changes to existing mortgage, pro
 > 3.	Transaction reporting: the system: 
 •	The system will generate transaction reports, providing users with their mortgage activities and financial obligations. 
 Scope: This functionality involves generating detailed reports that summarize mortgage transactions, helping users track their payment history, outstanding balances, and other relevant financial information.
-Make sure the reports are easy to understand and allowing users to insight into their mortgage transactions.
+Make sure the reports are easy to understand and allow users to insight into their mortgage transactions.
 > 4.	Mortgage editing: 
 •	Users can edit mortgage details, such as adjusting extra payments or deleting payments as needed.
 Scope: This functionality enables users to make adjustments to specific aspects of their mortgage agreements, such as payment schedules or loan terms, to better suit their needs or preferences. 
@@ -113,7 +113,7 @@ Scope: The project will not include integration with external systems beyond the
 For each functionality: <br>
 1.	The first stage of initial set-up: <br>
 •	Analysis: The initial setup process is crucial as it sets the foundation for the entire mortgage management system. Users need to input key details accurately to ensure the calculations and management of their mortgage are done correctly.
-•	Reflection: To address this business issue the system must prioritize simplicity and straightforwardness in the setup process. Providing clear guidance and validation checks can help mitigate errors and ensure users start their mortgage journey smoothly.
+•	Reflection: To address this business issue, the system must prioritize simplicity and straightforwardness in the setup process. Providing clear guidance and validation checks can help mitigate errors and ensure users start their mortgage journey smoothly.
 
 2.	Update mortgage: <br>
 •	Analysis: Changes in financial circumstances or loan terms are common occurrences for mortgage holders. Users need the flexibility to update their mortgage details easily and accurately within the system.
@@ -121,7 +121,7 @@ For each functionality: <br>
 
 3.	Transaction reporting: 
 •	Analysis: Transaction reports provide users with insights into their payment history and remaining balances.
-•	Reflection: Generating detailed and comprehensible transaction reports is important for users to track their historical data and they will be able to get insights from the reports.
+•	Reflection: Generating detailed and comprehensible transaction reports is important for users to track their historical data, and they will be able to get insights from the reports.
 
 4.	Mortgage editing:
 •	Analysis: Mortgage agreements may need adjustments over time to accommodate changes in circumstances or preferences. Users require the ability to edit specific details of their mortgage while maintaining data accuracy and consistency. <br>
@@ -133,7 +133,7 @@ For each functionality: <br>
 
 6.	Authentication: 
 •	Analysis: Users need a process to create and manage their accounts.
-•	Reflection: Building an authentication system that allows users to log in, log out, change passwords, and delete accounts is essential.
+•	Reflection: Building an authentication system that allows users to log in, log out, change passwords, and delete account is essential.
 
 7.	Personalization: 
 •	Analysis: Users should have the flexibility to edit or delete historical transactions to ensure the accuracy of their financial records.
@@ -146,8 +146,8 @@ For each functionality: <br>
 _Note: Please read URS for more information_
 ## 3. Analysis & Reflection of the Program Specifications
 ### 3.1 Graphical User Interface
-The users will be greeted with a login page to be able to access their accounts. Their will also be a seperate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for a password change or to delete thier account<br>
-The program needs to have a simple interface desgined to quickly provide analysis of a mortgage. To be able to do this, the main page of the application needs to contain all of the information relating to the analysis of the mortgage, primarily a table of summarised analysis, a graph showing the change in equity over time, and an amortization table showing specific timestamped information.<br>
+The users will be greeted with a login page to be able to access their accounts. There will also be a separate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for a password change or to delete their account <br>
+The program needs to have a simple interface designed to quickly provide analysis of a mortgage. To be able to do this, the main page of the application needs to contain all of the information relating to the analysis of the mortgage, primarily a table of summarised analysis, a graph showing the change in equity over time, and an amortization table showing specific timestamped information.<br>
 There also needs to be a seperate interface to allow for the creation of a mortgage and transaction. Due to the amount of information required for each of these sections, the will need their own page. The user then should be able to see some of the analysis for the information they enter beofre saving it permenately and return to the home page.<br>
 Lastly, there will be a page to allow users to remove mortages and transactions that they want to remove, listing them out showing identifying information so that they can correct select which ones to remove.
 ### 3.2 User Accounts
@@ -162,13 +162,13 @@ Another important function of the application will be the ability to remove data
 There will also be a way to completely delete the account if the user decides to. This option will be accessable under the user setting page, and if selected and confirmed it will delete the account and return the to the login page.<br>
 For all these forms of data removal, if data that is reliant on that deleted entry exists, it will also be removed, e.g. if a user deleted a mortgage, all connected transactions will be removed as well.
 ## 4. Key areas of software application issues
-There is some important areas our software will need to be able handle/work with in order to deliver a complete solution to the client.
+There are some important areas our software will need to be able to handle/work with in order to deliver a complete solution to the client.
 ### 4.1 Reliability 
-Because we are working with fincancial information, we need to do our best to ensure that our application runs reliably. With this in mind, we need to make sure that our application correctly handles any mathmatical data that is given to ensure accurate results as this is the core functionality of the calculator. The most common areas that could impede this is with rounding errors or inputing data that is out of the range of the expected field. The best way to overcome this is to include robust error checking in our code to ensure that this is mitigated as much as possible. This theme should be extended throughout the software, in order to make sure that the program is reliable as possible. More information about this will be available in our Test framework which will show how we intend to prove that our application catches these errors effectively.
+Because we are working with financial information, we need to do our best to ensure that our application runs reliably. With this in mind, we need to make sure that our application correctly handles any mathmatical data that is given to ensure accurate results as this is the core functionality of the calculator. The most common areas that could impede this is with rounding errors or inputing data that is out of the range of the expected field. The best way to overcome this is to include robust error checking in our code to ensure that this is mitigated as much as possible. This theme should be extended throughout the software, in order to make sure that the program is reliable as possible. More information about this will be available in our Test framework which will show how we intend to prove that our application catches these errors effectively.
 ### 4.2 Scalability
-Although this software isnt intended to be scaled up to a larger audience, designing the code in a way that allows added features to be included is important to allow for future flexibility of the program. To allow for this, deisgning the code to be more modular, with set definitions for classes and different aspects of the code, it will allow future developers to be able to more efficently make adjustments to the code to suit their needs. Another way to allow for future scalability is through the design of the application as a whole, creating an application environment that can be easily integrated into more wide reaching framework.
+Although this software isn't intended to be scaled up to a larger audience, designing the code in a way that allows added features to be included is important to allow for future flexibility of the program. To allow for this, deisgning the code to be more modular, with set definitions for classes and different aspects of the code, it will allow future developers to be able to more efficently make adjustments to the code to suit their needs. Another way to allow for future scalability is through the design of the application as a whole, creating an application environment that can be easily integrated into more wide reaching framework.
 ### 4.3 Performance
-  - Responsetimes, Throughtput/Scalability
+  - Responsiveness, Throughput/Scalability
   - Bottlenecks performance issues
 ### 4.4 Maintainability
   - Maintainability, modularity and extensibility
@@ -176,11 +176,11 @@ Although this software isnt intended to be scaled up to a larger audience, desig
   - How changes and updates will be handled
 ### 4.5 Security
   - Identifying vulnerabilities and threats
-  - Define measures to protect data and unauthorised access
+  - Define measures to protect data and unauthorized access
   - Authentication, authorization, encryption and data privacy
 ### 4.6 Usability 
   - UI/UX design
-  - Accessability and navigation
+  - Accessibility and navigation
 ### 4.7 Compatibility
   - Address different compatibilities
 ## 5. System Overview 
@@ -261,7 +261,7 @@ Users can analysis override payment and add extra costs if there is any. A comme
 They will see a table of both mortgages and transactions with identifying information so that they can remove exactly what they want to remove.
  > ![wireframe_delete_data](wireframe_removing_data.png)
 <br><br>**User account icon**:
-When user clicks the user icon on the top right page then a pop up window will appear for user to update their account information.
+ When a user clicks the user icon on the top right page, then a pop-up window will appear for user to update their account information.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
 <br><br>**User account settings**: 
 The username will display as default and user can change password.
@@ -295,7 +295,7 @@ This approach is straightforward, as the interactions between components are rel
 Our project will use manual testing through the Pytest framework.
 <br><br>
 Test scenario:
-![test_scebario_integrationTesting.png](test_scebario_integrationTesting.png)
+![test_scenario_integrationTesting.png](test_scenario_integrationTesting.png)
 
 ## 10. Conclusion
 ## 11 Definitions, Acronyms and Abbreviations
