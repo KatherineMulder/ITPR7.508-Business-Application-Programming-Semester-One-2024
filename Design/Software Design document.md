@@ -282,6 +282,20 @@ It checks if the initialized mortgage object has the correct principal value
 and whether it raises a ValueError when non-numeric values are passed for initialization parameters.
 
 ![pytest_example.png](pytest_example.png)
+<br><br>
+Test scenario:
+![test_scenario_unitTesting.png](test_scenario_unitTesting.png)
+
+
+_Integration testing_ <br>
+Were individual components or modules of a system are combined and tested as a group. The purpose of integration testing is to ensure that the interactions between these components work as expected and that the integrated system functions correctly as a whole.
+<br><br>
+For a small and straightforward project like a home loan monitor, we will integrate all the components/modules and test the entire system as a whole, employing the big bang integration testing approach.
+This approach is straightforward, as the interactions between components are relatively simple and easy to manage.
+Our project will use manual testing through the Pytest framework.
+<br><br>
+Test scenario:
+![test_scebario_integrationTesting.png](test_scebario_integrationTesting.png)
 
 ## 10. Conclusion
 ## 11 Definitions, Acronyms and Abbreviations
