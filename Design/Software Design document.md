@@ -1,5 +1,5 @@
 
-# Software Design Description
+# Software Design Document
 
 ## For Home Loan Monitor
 
@@ -10,7 +10,7 @@ Katherine Mulder & Alex Borawski
 
 ## Table of Contents
 
-- [Software Design Description](#software-design-description)
+- [Software Design Description](#software-design-document)
 - [For Home Loan Monitor](#for-home-loan-monitor)
 - [Table of Contents](#table-of-contents)
   - [Revision History](#revision-history)
@@ -24,7 +24,7 @@ Katherine Mulder & Alex Borawski
     - [3.3 Data Entry Structure](#33-data-entry-structure)
     - [3.4 Analytical Functionality](#34-analytical-functionality)
     - [3.5 Data Removal Processes](#35-data-removal-processes)
-  - [4. Key areas of software application issues](#4-key-areas-of-software-application-issues)
+  - [4. Key areas of software application issues](#4-key-potential-software-application-issues)
     - [4.1 Reliability](#41-reliability)
     - [4.2 Scalability](#42-scalability)
     - [4.3 Performance](#43-performance)
@@ -59,17 +59,17 @@ Katherine Mulder & Alex Borawski
 
 ## 1. Introduction
 
-> The following Software Design Description document outlines the design and architecture of a proposed Home Loan Monitor Tool. This tool aims to simplify mortgage management processes for individuals by offering a user-friendly interface and comprehensive features. It's important to note that this proposal is intended for personal use only and is not designed for financial advisers or professional consultation.
->The SDD serves as a detailed guide for developers, stakeholders, and users, providing insights into the software's functionality, structure, and behavior. This includes data design, system design, interface design, and testing framework.
+> This document outlines the architecture and design of the proposed Mortgage Calculator (calculator). This calculator aims to simplify mortgage management processes for individuals by offering a user-friendly interface and comprehensive features. It is important to note that this calculator is intended for personal use only and is not designed for financial advisers or professional consultation.
+>This Software Design Document serves as a detailed guide for developers, stakeholders, and users, providing insights into the software's functionality, structure, and behavior. This includes data design, system design, interface design, and testing framework.
 
 ### 1.1 Document Purpose
 
-The reason we're writing this document is to explain how the Home Loan Monitor Tool will work and how it's built. We want to make it easy for everyone involved to understand how the software will function and what it will look like.
-We have also conducted a user required specifications document defines what users expect from this project.
+This document explains how the Mortgage Calculator works and how it is built. This is designed to make it easy to understand how the software functions and what it will look like.
+We have included a user required specifications document that defines what users can expect from this project.
 
-- Users/ Project manager: This document serves as a guide for both project managers and users of the mortgage management tool. It provides the software's functionality, design rationale, usability aspects, and system behavior. By understanding these details, users and project manager can make informed decisions about the project, while users can utilize the software to meet their needs.
+- Users/ Project manager: This document serves as a guide for both project managers and users of the Mortgage Calculator. It provides the software's functionality, design rationale, usability aspects, and system behavior. By understanding these details, users and project managers can make informed decisions about the project, while users can utilize the software to meet their needs.
 
-- Developers: This guide helps developers understand how the software is designed, the important decisions made about its structure, and how it's built. It's like a roadmap for them to turn requirements into a working program.
+- Developers: This guide helps developers understand the software design, important decisions made about its structure, and how it is built. It provides a roadmap for developers to turn requirements into a working program.
 
 ### 1.2 Subject Scope
 
@@ -77,14 +77,14 @@ We have also conducted a user required specifications document defines what user
 
 - **Project Includes:**
 
-The home loan monitor will contain the following key functionalities:
+The Mortgage Calculator will contain the following key functionalities:
 
 > 1. Initial set up:
-• Users can input principal amounts, interest rates, term years, additional costs, and deposit to initiate a mortgage.
+• Users can input principal amounts, interest rates, loan term, additional costs, and deposit to initiate a mortgage calculation.
 Scope: This functionality covers the setup process for creating a new mortgage with all necessary details required for calculation and management. It's important to make sure that users can easily navigate through this setup process and that it accommodates various types of mortgages and inputs.
 > 2. Update mortgage:
-• Users have the ability to modify existing mortgage details, including changing the principal, interest rates, terms, overriding payments, and adding comments to transactions.
-Scope: This functionality allows users to make changes to existing mortgage, providing flexibility to accommodate changes in financial circumstances or terms of the loan. Make sure that the system accurately reflects any changes made by users.
+• Users have the ability to modify existing mortgage details, including changing the principal, interest rates, loan term, repayment amounts, and adding comments to transactions.
+Scope: This functionality allows users to make changes to existing mortgages, providing flexibility to accommodate changes in financial circumstances or terms of the loan.
 > 3. Transaction reporting: the system:
 • The system will generate transaction reports, providing users with their mortgage activities and financial obligations.
 Scope: This functionality involves generating detailed reports that summarize mortgage transactions, helping users track their payment history, outstanding balances, and other relevant financial information.
@@ -103,30 +103,22 @@ Scope: Implement a graphical chart feature within the system interface to displa
 
 - **Project Excludes:**
 
-> 1. Complex mortgage type:
-• Adjustable-rate mortgages (ARMs) with various index rates and margins, will be excluded for simplicity.
-Scope: The project will focus on standard mortgage types and will exclude complex mortgage variations for simplicity and clarity.
+> 1. Complex mortgage types:
+• Adjustable-rate mortgages (ARMs) with various index rates and margins, will be excluded.
 > 2. Deployment:
-• The actual deployment of the website onto designated servers.
-Scope: The project will focus on developing the website and its functionalities but will not involve the deployment process onto live servers.
-> 3. SEO services:
-• Extensive SEO services such as keyword research, on-page optimization, or link building.
-Scope: The project will not include SEO services beyond basic considerations for website visibility. Specific SEO tasks will be excluded from the scope.
+• The project will focus on developing the website and its functionalities but will not involve the deployment process onto live servers.
+> 3. Search Engine Optimisation (SEO) services:
+• The project will not include SEO services beyond basic considerations for website visibility.
 > 4. Maintenance and updates:
-• The necessary maintenance and updates for the software post-project completion.
-Scope: Post-project maintenance and updates will not be covered under this project. This includes ongoing software support and updates.
+• Post-project maintenance and updates will not be covered under this project. This includes ongoing software support and updates.
 > 5. Advanced financial analysis:
-• Advanced financial analysis beyond basic mortgage calculations, such as investment analysis, risk assessment, or portfolio management.
-Scope: The project will focus solely on basic mortgage calculations and will not include advanced financial analysis features.
+• The project will focus solely on basic mortgage calculations and will not include advanced financial analysis features.
 > 6. Legal advice:
-• Legal advice related to mortgages, including contract terms, legal obligations, or regulatory compliance.
-Scope: Users will need to seek legal advice from professionals for any legal matters related to mortgages.
+• The project does not include any legal advice related to mortgages. Users need to seek independant legal advice.
 > 7. Tax advice:
-• Tax advice or calculations of property taxes.
-Scope: Users will need to consult with tax professionals or refer to relevant tax regulations for any tax-related matters.
+• The project does not include tax advice. Users will need to consult with tax professionals or refer to relevant tax regulations for any tax-related matters.
 > 8. Integration with external systems:
-• Integration with banking systems, financial institutions, or real estate databases.
-Scope: The project will not include integration with external systems beyond the scope of basic mortgage functionalities.
+• The project will not include integration with external systems beyond the scope of basic mortgage functionalities.
 
 ## 2. Analysis/ Reflection of Business Issues
 
@@ -170,93 +162,93 @@ Note: Please read URS for more information
 
 ### 3.1 Graphical User Interface
 
-The users will be greeted with a login page to be able to access their accounts. There will also be a separate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for a password change or to delete their account.
+Users will be greeted with a login page to access their accounts. There will also be a separate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for password changes or account deletion.
 
-The program needs to have a simple interface designed to quickly provide analysis of a mortgage. To be able to do this, the main page of the application needs to contain all of the information relating to the analysis of the mortgage, primarily a table of summarised analysis, a graph showing the change in equity over time, and an amortization table showing specific timestamped information.
+The program will have a simple interface designed to quickly provide analysis of a mortgage. To be able to do this, the main page of the application will contain all of the information relating to the analysis of mortgages, primarily a table of summarised analysis, a graph showing the change in equity over time, and an amortization table showing specific timestamped information.
 
-There also needs to be a seperate interface to allow for the creation of a mortgage and transaction. Due to the amount of information required for each of these sections, the will need their own page. The user then should be able to see some of the analysis for the information they enter beofre saving it permenately and return to the home page.
+There will be a seperate interface to allow for the creation of a mortgage and transactions. Due to the amount of information required for each of these sections, they will have their own page. The user will then be able to see some of the analysis for the information they enter before saving it permanently and returning to the home page.
 
-Lastly, there will be a page to allow users to remove mortages and transactions that they want to remove, listing them out showing identifying information so that they can correct select which ones to remove.
+Lastly, there will be a page to allow users to remove mortages and transactions that no longer want, listing them out showing identifying information so they can correctly select the ones they want to remove.
 
 ### 3.2 User Accounts
 
-User Accounts will be implemented in the software to seperate mortgages (and subsequtially transactions) from others users, with no access whatsoever being allowed between users. These accounts will require a password to be made in order to secure the account. Primarily due to the scale of the project, there is no plans to include an admin account to access and manage users from within the application itself, but there will be a way to acess the information from the database end, allowing changes to be made there if neccessary.
+User Accounts will be implemented in the software to seperate mortgages (and subsequently transactions) from others users, with no access whatsoever being allowed between users. These accounts will require a password in order to secure the account. Primarily, due to the scale of the project, there is no plan to include an admin account to access and manage users from within the application itself, but there will be a way to acess the information from the database end, allowing changes to be made there if neccessary.
 
 ### 3.3 Data Entry Structure
 
-With the calculator requiring a lot of specific information for both the mortgage and transaction, the structure that the entry will be keep simple and straightforward to help users correctly entry information into the right field. All entry fields will have a description next to their titles outlining correct formatting. Additionally, the entry fields in the transaction creation screen will include automatically inputted data from the mortgage that is selected so the users only need to adjust the information in the fields that need changes. Lastly, if any information is entered incorrectly, the entry fields will highlight red and a small error message will be displayed to let the user know that something in this field is wrong.
+With the calculator requiring a lot of specific information for both mortgages and transactions, these pages will be keep simple and straightforward to help users correctly entry information into the right field. All entry fields will have a description next to their titles outlining correct formatting. Additionally, the entry fields in the transaction creation screen will include automatically inputted data from the mortgage that is selected so the users only need to adjust the information in the fields that need changes. Lastly, if any information is entered incorrectly, the entry fields will highlight red and an error message will be displayed to let the user know that something in this field is wrong.
 
 ### 3.4 Analytical Functionality
 
-The application will need to handle a lot of analysis and most of it will be done as a user creates a mortgage or transaction to show in the page before a user confirms this is correct. This analysis will include the Estimated Repayment, a payment breakdown of interest and principal and information regarding the mortgage maturity (including payments over full term, full term to amortize, interest over the full term and principal + interest). It is important to understand that in the transaction creation screen there will be added information to showcase any extra payements, the payments over the reduced term, Estimated reduced term to amortize, interest over the reduced term, interest saved over the reduced term and principal + interest over the reduced term.
+The application will need to handle a lot of analysis and most of it will be done as a user creates a mortgage or transaction to show in the page before a user confirms this is correct. This analysis will include the Estimated Repayment, a payment breakdown of interest and principal and information regarding the mortgage maturity (including payments over full term, full term to amortize, interest over the full term and principal + interest). It is important to understand that in the transaction creation screen there will be added information to showcase any extra payments, the payments over the reduced term, estimated reduced term to amortize, interest over the reduced term, interest saved over the reduced term and principal + interest over the reduced term.
 
-Then this information will then be used to generate a graph (viewable on both the main page and creation pages) and an Amortization table (main page only) based on the state of the mortgage. The state will be determined by combining the inital state of the mortage and applying any transactional changes that have occured to it at the correct time. Users will also be able to apply a date to the analysis on the main page, only seeing the start of the mortgage from that starting data.
+This information will then be used to generate a graph (viewable on both the main page and creation pages) and an Amortization table (main page only) based on the state of the mortgage. The state will be determined by combining the inital details of the mortage and applying any transactional changes that have occured to it at the correct time. Users will also be able to apply a starting date to the analysis on the main page, only seeing the start of the mortgage from that date.
 
 ### 3.5 Data Removal Processes
 
-Another important function of the application will be the ability to remove data from the system. User will be able to remove any mortgages or transactions they want through a single page which will show a table for each type of data, containing all of their entries. Transactions will show the date they were applied from, a comment on the purpose of the transaction, and the mortgage that it relates to. For mortgages, it will show the start date of the mortage, the name given to the mortgage as well as the current balance remaining on the mortgage. Then, next to all of thees entries will be a delete button that if clicked will show a popup confirming the deletion of the selected entry, and if yes is selected the data will be removed.
+Another important function of the application will be the ability to remove data from the system. User will be able to remove any mortgages or transactions they want through a single page which will show a table for each type of data, containing all of their entries. Transactions will show the date they were applied, a comment on the purpose of the transaction, and the mortgage that it relates to. For mortgages, it will show the start date of the mortage, the name given to the mortgage, as well as the current balance remaining on the mortgage. Then, next to all of these entries will be a delete button that if clicked will show a popup confirming the deletion of the selected entry, with a yes button to confirm and if selected the data will be removed.
 
-There will also be a way to completely delete the account if the user decides to. This option will be accessable under the user setting page, and if selected and confirmed it will delete the account and return the to the login page.
+There will be a way to completely delete the account if the user decides to. This option will be accessable under the user setting page, and if selected and confirmed, it will delete the account and return to the login page.
 
-For all these forms of data removal, if data that is reliant on that deleted entry exists, it will also be removed, e.g. if a user deleted a mortgage, all connected transactions will be removed as well.
+For all these forms of data removal, if data that is reliant on that deleted entry exists, it will also be removed, e.g. if a user deletes a mortgage, all connected transactions will be removed as well.
 
-## 4. Key areas of software application issues
+## 4. Key potential software application issues
 
-There are some important areas our software will need to be able to handle/work with in order to deliver a complete solution to the client.
+There are some important areas the software will need to handle/work with in order to deliver a complete solution to the client.
 
 ### 4.1 Reliability
 
-Because we are working with financial information, we need to do our best to ensure that our application runs reliably. With this in mind, we need to make sure that our application correctly handles any mathmatical data that is given to ensure accurate results as this is the core functionality of the calculator. The most common areas that could impede this is with rounding errors or inputing data that is out of the range of the expected field. The best way to overcome this is to include robust error checking in our code to ensure that this is mitigated as much as possible. This theme should be extended throughout the software, in order to make sure that the program is reliable as possible. More information about this will be available in our Test framework which will show how we intend to prove that our application catches these errors effectively.
+Because we are working with financial information, we need to ensure the application runs reliably. With this in mind, we will make sure our application correctly handles any mathmatical data entered to ensure accurate results, as this is the core functionality of the Mortgage Calculator. The most common areas that could impede this are rounding errors or inputing data that is out of the range of the expected field. The best way to overcome this is to include robust error checking in our code to ensure that this is mitigated as much as possible. Robust error checking will be extended throughout the software in order to make sure that the program is as reliable as possible. More information about this will be available in our Test framework which will show how we intend to rnsure that our application catches these errors effectively.
 
 ### 4.2 Scalability
 
-Although this software isn't intended to be scaled up to a larger audience, designing the code in a way that allows added features to be included is important to allow for future flexibility of the program. To allow for this, deisgning the code to be more modular, with set definitions for classes and different aspects of the code, it will allow future developers to be able to more efficently make adjustments to the code to suit their needs. Another way to allow for future scalability is through the design of the application as a whole, creating an application environment that can be easily integrated into more wide reaching framework.
+Although this software isn't intended to be scaled up to a larger audience, designing the code in a way that allows added features to be included is important to allow for future flexibility of the program. To allow for this, the code will be designed in a more modular way, with set definitions for classes and different aspects of the code, this will allow future developers to more efficently make adjustments to the code to suit their needs. Another way to allow for future scalability is through the design of the application as a whole, creating an application environment that can be easily integrated into more wide reaching framework.
 
 ### 4.3 Performance
 
-The performance of the application is important because the analysis should be readily available to the user when they log into the application. This is the biggest bottleneck in the application and will require deisgning the code to load analyses as quickly as possible. Multi-threading is a potential soultion, but most certainly we will be loading all the analyses of a user when they login to the application to speed up the load times.
+The performance of the application is important because the analysis should be readily available to the user when they log into the application. This is the biggest bottleneck in the application and will require deisgning the code to load analyses as quickly as possible. Multi-threading is a potential soultion, but most certainly we will be loading all the analyses of a user when they login to the application to speed up load times.
 
 ### 4.4 Maintainability
 
-Although our involvement in the application will cease once the development is complete, we will still develop the application to be easily maintained well into the future. The main way we will deliver on this is designin the code to be modular with clear intidciations as to what each section of the code is responsible for. Comments within the code will be in depth, covering the functionality of what each section does, how it does it, and what isnt included on launch. This will help futute developers be able to understand what is happening within the software, and how they can quickly edit, add or emove sections of it to suit their needs.
+Although our involvement in the application will cease once the development is complete, we will still develop the application to be easily maintained well into the future. The main way we will deliver on this is designing the code to be modular, with clear indications of what each section of the code is responsible for. Comments within the code will be in depth, covering the functionality of what each section does, how it does it, and what is not included on launch. This will help future developers understand what is happening within the software and how they can quickly edit, add or remove sections to suit their needs.
 
 ### 4.5 Security
 
-It will be important to handle data securely within our application, especially as we are dealing with user's senstive financial information. The most likely vulnerability is that users might be able to access other user's data without authorization, which means that we need to include robust methods to prevent this from happening.
+It will be important to handle data securely within our application, especially as we are dealing with users' senstive financial information. The most likely vulnerability is that users might be able to access other user's data without authorisation, which means we need to include robust methods to prevent this from happening.
 
 Another potential vulnerability is entering malicous data into the data entry fields throughout the application. In order to prevent this, we will include a lot of data validation, ranging from type checking, length checking and value checking.
 
-We will also want to secure sensitive data that even administrators should not directly know as well. To do this, we should use a form of encryption make the data much hard to access without knowing how to decrypt it. This will help secure the data, making it harder gain access to user's accounts.
+We will also want to secure sensitive data that even administrators should not directly access. To do this, we will use a form of encryption, making the data much harder to access.
 
 ### 4.6 Usability
 
-We also need to make sure that the application is very easy to understand and navigate through. To do so, we will need to deisgn the pages, and the contections between them, to be easily identifiable. By clearly showing the user what is present on a page and what is to be expected on the next page, it will make the application as a whole a lot more easy to understand.
+We will make sure the application is easy to understand and navigate through. To do so, we will design the pages, and the connections between them, to be easily identifiable. Clearly showing the user what is present on a page and what is to be expected on the next page, it will make the application as a whole easier to understand.
 
-Another aspect of making the software easy to use is by giving clear feedback to any erorrs inputted by the user as well as clearly highlighting the what each part of the software is doing. To acheive this, we will provide clear feedback to the user after they try and enter incorrect data explaining what they did wrong. By also including description alongside any data input or display areas, we will make it much more clear what is expected or shown to the user.
+Another aspect of making the software easy to use is giving clear feedback to any errors inputted by the user, as well as clearly highlighting what each part of the interface is doing. To achieve this we will provide clear feedback to the user after they try and enter incorrect data, explaining what they did wrong. By including descriptions alongside any data input or display areas we will make it much clearer what is expected or shown to the user.
 
 ### 4.7 Compatibility
 
-Our software should be desgined in a manner that makes it more compatible with potential changes in the future environment in which it is operating. With this in mind, we will develop the software to easily supprot changes in the way the app is used. By isolating the ways in which the software accesses a database and how it displays itself on a web browser, we can make it easier to swap out or augment how the application is used.
+Our software will be designed in a manner that makes it more compatible with potential future changes to the environment in which it is operating. With this in mind, we will develop the software to easily support changes in the way the application is used. By isolating the ways in which the software accesses a database and how it displays itself on a web browser, we can make it easier to swap out or augment how the application is used.
 
 ## 5. System Overview
 
-Factoring in everything discussed in the previous sections of the document, we have decided to develop an application that connect to an external database in order to save user's data. This would then connect to our software in ordfer to  create analyses of the user's mortgage(s) and then display this information to the user via a web browser.
+Factoring in everything discussed in the previous sections of this document, we have decided to develop an application that connects to an external database in order to save user's data. This would then connect to our software in order to create analyses of the user's mortgage(s) and then display this information to the user via a web browser.
 
-This design approach allows us to keep the application small and lightweight, extremely portable and modular, allowing for different useages to be added or removed in the future, whilst also providing flexibility in how the program is presented to the user via a Graphical User Interface, especailly as the default browser of the hardware will be used to render the interface.
+This design approach allows us to keep the application small and lightweight, extremely portable and modular, allowing for different useages to be added or removed in the future, whilst also providing flexibility in how the program is presented to the user via a Graphical User Interface, especially as the default browser of the hardware will be used to render the interface.
 
 Below we chosen the specific software we will use to devlop this application and why it was chosen over other similar options.
 
 ### 5.1 Software Development Technologies and Tools
 
-For the backend logic and data processing, we have decided to use Python as the language for programming this. This decision was reached by finding a language that designed to be more readable to  other developers, whilst also providing simple ways to import potential packages that might be neccesary for the project.
+For the backend logic and data processing, we have decided to use Python as the programming language. This decision was reached as Python is a language easily readable by most developers, whilst also providing simple ways to import potential packages that might be neccesary for the project.
 
-By working with a web browser, we have elected to use HTML, CSS and Javascript to create and design our web pages for the project. We will also utilize bootstrap to acess pre-designed features to make the software more standardized.
+By working with a web browser, we have elected to use HTML, CSS and Javascript to create and design our web pages for the project. We will also utilize bootstrap to access pre-designed features that make the software more standardized.
 
-We decicded to follow a Web framework to make the routing anmd devliery of web pags more streamlined and easier to both understand and modify in the future. With these im mind, we chose Flask as out framework as it is simple to setup and configure, as well as understand what each part of the software does.
+We decided to follow a Web framework to make the routing and delivery of web pages more streamlined and easier to understand and modify in the future. With these in mind, we chose Flask as our framework, as it is simple to setup and configure as well as understand what each part of the software does.
 
-To handle our data storage, we have decided to use Postgres. The main reason we decided to use Postgres was because of how simple is is to setup and that it can handle small to large data extremely well, meaning that if the software was to be scaled to meet a larger audience, it can still handle the data with ease.
+To handle our data storage, we have decided to use Postgres. The main reason we decided to use Postgres was because of how simple it is to setup and that it can handle small to large data extremely well, meaning that if the software was to be scaled to meet a larger audience, it would still handle the data with ease.
 
-To test our software, we will make use of Pytest as it automates the unit tesing of our software, ensuring that the code can handle all predicted problems correctly.
+To test our software, we will make use of Pytest as it automates the unit testing of our software, ensuring that the code can handle all predicted problems correctly.
 
 ## 6. Data Design
 
@@ -338,13 +330,11 @@ The main objective is to isolate written code and determine if it works as it sh
 We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality.
 
 Code example:
-Use a simple code here to demo what we will do for our unit testing.
-This code defines a class MortgageCalculator with properties and setters for attributes like mortgage principal, interest rate, and extra costs, allowing for calculations related to mortgages by setting up the initial parameters and validating inputs.
+This code defines a class Mortgage Calculator with properties and setters for attributes like mortgage principal, interest rate, and extra costs, allowing for calculations related to mortgages by setting up the initial parameters and validating inputs.
 ![unitTesting_example.png](unit_testing_example.png)
 
 We will use Pytest for the MortgageCalculator class.
-It checks if the initialized mortgage object has the correct principal value
-and whether it raises a ValueError when non-numeric values are passed for initialization parameters.
+It checks if the initialized mortgage object has the correct principal value and whether it raises a ValueError when non-numeric values are passed for initialisation parameters.
 
 ![pytest_example.png](pytest_example.png)
 Test scenario:
@@ -353,7 +343,7 @@ Test scenario:
 _Integration testing_
 Were individual components or modules of a system are combined and tested as a group. The purpose of integration testing is to ensure that the interactions between these components work as expected and that the integrated system functions correctly as a whole.
 
-For a small and straightforward project like a home loan monitor, we will integrate all the components/modules and test the entire system as a whole, employing the big bang integration testing approach.
+For a small and straightforward project like a Mortgage Calculator, we will integrate all the components/modules and test the entire system as a whole, employing the big bang integration testing approach.
 This approach is straightforward, as the interactions between components are relatively simple and easy to manage.
 Our project will use manual testing through the Pytest framework.
 
