@@ -255,10 +255,12 @@ This page allows users to input new mortgage information.
 > ![wireframe_add_mortgage](wireframe_add_mortgage.png)
 <br><br>**update mortgage page**: After a new mortgage is established, user will be able to edit mortgage on this page.
 This page will display current mortgage details and allow users to update the information. 
-Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs.  
+Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs. 
+_Note:_ The numbers in the input fields are an example.
 > ![wireframe_update_mortgage](wireframe_update_mortgage.png)
 <br><br>**Deleting Data Page**: If users wish to delete existing transactions or mortgages, they can access this page through the removing data button on the index page.
 They will see a table of both mortgages and transactions with identifying information so that they can remove exactly what they want to remove.
+_Note:_ The numbers in the input fields are an example.
  > ![wireframe_delete_data](wireframe_removing_data.png)
 <br><br>**User account icon**:
  When a user clicks the user icon on the top right page, then a pop-up window will appear for user to update their account information.
@@ -283,7 +285,11 @@ and whether it raises a ValueError when non-numeric values are passed for initia
 
 ![pytest_example.png](pytest_example.png)
 <br><br>
-Test scenario:
+
+An example in the Pytest it will show you the results for the class TestStrings.
+![pytest_result.png](pytest_result.png)
+
+Test scenarios:
 ![test_scenario_unitTesting.png](test_scenario_unitTesting.png)
 
 
@@ -294,7 +300,7 @@ For a small and straightforward project like a home loan monitor, we will integr
 This approach is straightforward, as the interactions between components are relatively simple and easy to manage.
 Our project will use manual testing through the Pytest framework.
 <br><br>
-Test scenario:
+Test scenarios:
 ![test_scenario_integrationTesting.png](test_scenario_integrationTesting.png)
 
 ## 10. Conclusion
