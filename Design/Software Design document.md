@@ -330,7 +330,6 @@ An example in the Pytest it will show you the results for the class TestStrings.
 
 Test scenarios:
 ![test_scenario_unitTesting.png](test_scenario_unitTesting.png)
-
 _Integration testing_
 Were individual components or modules of a system are combined and tested as a group. The purpose of integration testing is to ensure that the interactions between these components work as expected and that the integrated system functions correctly as a whole.
 
