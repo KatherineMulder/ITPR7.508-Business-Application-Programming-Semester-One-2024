@@ -311,7 +311,8 @@ This page allows users to input new mortgage information.
 > ![wireframe_add_mortgage](wireframe_add_mortgage.png)
 **Update mortgage page**: After a new mortgage is established, user will be able to edit mortgage on this page.
 This page will display current mortgage details and allow users to update the information.
-Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs.  
+Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs. 
+_Note:_ The numbers in the input fields are an example.
 > ![wireframe_update_mortgage](wireframe_update_mortgage.png)
 **Deleting Data Page**: If users wish to delete existing transactions or mortgages, they can access this page through the removing data button on the index page.
 They will see a table of both mortgages and transactions with identifying information so that they can remove exactly what they want to remove.
@@ -337,7 +338,11 @@ We will use Pytest for the MortgageCalculator class.
 It checks if the initialized mortgage object has the correct principal value and whether it raises a ValueError when non-numeric values are passed for initialisation parameters.
 
 ![pytest_example.png](pytest_example.png)
-Test scenario:
+
+An example in the Pytest it will show you the results for the class TestStrings.
+![pytest_result.png](pytest_result.png)
+
+Test scenarios:
 ![test_scenario_unitTesting.png](test_scenario_unitTesting.png)
 
 _Integration testing_
@@ -347,7 +352,7 @@ For a small and straightforward project like a Mortgage Calculator, we will inte
 This approach is straightforward, as the interactions between components are relatively simple and easy to manage.
 Our project will use manual testing through the Pytest framework.
 
-Test scenario:
+Test scenarios:
 ![test_scenario_integrationTesting.png](test_scenario_integrationTesting.png)
 
 ## 10. Conclusion
