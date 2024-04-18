@@ -75,31 +75,19 @@ We have included a user required specifications document that defines what users
 
 **Scope Summary:**
 
+The Scope for the Mortgage Calculator is as follows:
+
 - **Project Includes:**
 
-The Mortgage Calculator will contain the following key functionalities:
-
-> 1. Initial set up:
-• Users can input principal amounts, interest rates, loan term, additional costs, and deposit to initiate a mortgage calculation.
-Scope: This functionality covers the setup process for creating a new mortgage with all necessary details required for calculation and management. It's important to make sure that users can easily navigate through this setup process and that it accommodates various types of mortgages and inputs.
-> 2. Update mortgage:
-• Users have the ability to modify existing mortgage details, including changing the principal, interest rates, loan term, repayment amounts, and adding comments to transactions.
-Scope: This functionality allows users to make changes to existing mortgages, providing flexibility to accommodate changes in financial circumstances or terms of the loan.
-> 3. Transaction reporting: the system:
-• The system will generate transaction reports, providing users with their mortgage activities and financial obligations.
-Scope: This functionality involves generating detailed reports that summarize mortgage transactions, helping users track their payment history, outstanding balances, and other relevant financial information.
-Make sure the reports are easy to understand and allow users to insight into their mortgage transactions.
-> 4. Mortgage editing:
-• Users can edit mortgage details, such as adjusting extra payments or deleting payments as needed.
-Scope: This functionality enables users to make adjustments to specific aspects of their mortgage agreements, such as payment schedules or loan terms, to better suit their needs or preferences.
-Ensure proper validation to prevent erroneous changes and maintain data accuracy and consistency.
-> 5. Authentication:
-• Users can create an account to store their transactions as well as change the username and password.
-Scope: This functionality involves implementing user authentication and account management features.
-• Ensure that users can easily manage their account without encountering any usability issues.
-> 6. Visualization chart:
-• Provide a graphical chart to visually represent key mortgage data and changes.
-Scope: Implement a graphical chart feature within the system interface to display important metrics such as the amortization schedule, loan balance over time, or payment breakdown (principal vs. interest).
+> 1. A Mortgage Calculator that will be able to take mortgage information given by a user and return an analysis of the mortgage in the form of a summary, graph /and table.
+•  Users will be able to make adjust to their mortgage's information in the the form of a transaction, which when completed, will update the analysis given the new information from the given date.
+• Users will be able to adjust the period the analysis is showing from.
+• Users will be able to create an account within the Calculator application, allowing them to save their mortgage(s) infromation and transaction information to a sperate database.
+> 2. Establishing a database to contain data from the Mortgage Calculator
+• A file to run to initialize the database to be run before the first use of the Mortgage Calculator application alongside documentation to help this process.
+> 3. Testing the software to ensure that any major issues are dealt with.
+• All test files will be included in the final delivery of the project.
+> 4. User documentation containing instructions on how to use the Mortgage Calculator
 
 - **Project Excludes:**
 
@@ -311,7 +299,7 @@ This page allows users to input new mortgage information.
 > ![wireframe_add_mortgage](wireframe_add_mortgage.png)
 **Update mortgage page**: After a new mortgage is established, user will be able to edit mortgage on this page.
 This page will display current mortgage details and allow users to update the information.
-Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs. 
+Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs.
 _Note:_ The numbers in the input fields are an example.
 > ![wireframe_update_mortgage](wireframe_update_mortgage.png)
 **Deleting Data Page**: If users wish to delete existing transactions or mortgages, they can access this page through the removing data button on the index page.
