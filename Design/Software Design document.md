@@ -308,9 +308,12 @@ They will see a table of both mortgages and transactions with identifying inform
 **User account icon**:
  When a user clicks the user icon on the top right page, then a pop-up window will appear for user to update their account information.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
+**User update**:
+ After a user click update account, a new page will appear for the user to choose whether they want to log-out, delete their account or change their password by click account setting button.
+> ![wireframe_user_update](wireframe_user_update.png)
 **User account settings**:
-The username will display as default and user can change password.
-> ![wireframe_user_settings](wireframe_user_settings.png)
+When user click account setting, this page will appear for user to change their password or if they decide not to then they can click logout back to the home page.
+> ![wireframe_user_settings](wireframe_account_settings.png)
 
 ## 9. Test Framework
 
