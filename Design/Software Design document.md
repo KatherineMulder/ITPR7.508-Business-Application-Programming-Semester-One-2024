@@ -42,8 +42,7 @@ Katherine Mulder & Alex Borawski
 - [8. Interface Design](#8-interface-design)
   - [8.1 Wireframes](#81-wireframes)
 - [9. Test Framework](#9-test-framework)
-- [10. Conclusion](#10-conclusion)
-- [11. Definitions, Acronyms and Abbreviations](#11-definitions-acronyms-and-abbreviations)
+- [10. Definitions, Acronyms and Abbreviations](#10-definitions-acronyms-and-abbreviations)
   - [Data Design Diagrams](#data-design-diagrams)
 
 ## Revision History
@@ -321,10 +320,10 @@ _Unit Testing_
 The main objective is to isolate written code and determine if it works as it should, so we can detect early flaws in code. We will focus on creating unit test cases before developing the actual code by using automated unit testing for validating the functionality.
 
 Code example:
-This code defines a class Mortgage Calculator with properties and setters for attributes like mortgage principal, interest rate, and extra costs, allowing for calculations related to mortgages by setting up the initial parameters and validating inputs.
+This code defines a class Mortgage with properties and setters for the attribute principal, as well as some other values.
 ![unitTesting_example.png](unit_testing_example.png)
 
-We will use Pytest for the MortgageCalculator class. It checks if the initialized mortgage object has the correct principal value and whether it raises a ValueError when non-numeric values are passed for initialization parameters.
+We will use Pytest for the Mortgage class. It checks if the initialized mortgage object has the correct principal value and whether it raises a ValueError when non-numeric values are passed for initialization parameters.
 
 ![pytest_example.png](pytest_example.png)
 
@@ -334,16 +333,27 @@ An example in the Pytest it will show you the results for the class TestStrings.
 Test scenarios:
 ![test_scenario_unitTesting.png](test_scenario_unitTesting.png)
 _Integration testing_
-Were individual components or modules of a system are combined and tested as a group. The purpose of integration testing is to ensure that the interactions between these components work as expected and that the integrated system functions correctly as a whole.
+Where individual components or modules of a system are combined and tested as a group. The purpose of integration testing is to ensure that the interactions between these components work as expected and that the integrated system functions correctly as a whole.
 
 For a small and straightforward project like a Mortgage Calculator, we will integrate all the components/modules and test the entire system as a whole, using the big bang integration testing approach. This approach is straightforward, as the interactions between components are relatively simple and easy to manage. Our project will use manual testing through the Pytest framework.
 
 Test scenarios:
 ![test_scenario_integrationTesting.png](test_scenario_integrationTesting.png)
+_System testing_
+System Testing will be done by seeing if our softtware can be intergrated correctly with external systems that are used to make our software function properly. In this case, our application wont be working with too many eternal systems and will be easy to imperically test if they connect properly.
 
-## 10. Conclusion
+Test scenarios:
+![test_scenario_systemtesting.png](test_scenario_systemtesting.png)
+_User Acceptance Testing_
+User Acceptance Testing will be done to ensure that when a potential user of our software does an action in our application that the correct response is shown to the user. These responses could be errors, new pages, confirmation windows and more.
 
-## 11 Definitions, Acronyms and Abbreviations
+We will want to thoroughly test this because gaps in these tests will directly impact the User Experience of our Application.
+
+Test scenarios:
+![test_scenario_useracceptancetesting1.png](test_scenario_useracceptancetesting1.png)
+![test_scenario_useracceptancetesting2.png](test_scenario_useracceptancetesting2.png)
+
+## 10 Definitions, Acronyms and Abbreviations
 
 ### Data Design Diagrams
 
