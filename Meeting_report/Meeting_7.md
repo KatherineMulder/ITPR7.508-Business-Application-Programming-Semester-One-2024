@@ -21,12 +21,12 @@
 ### Conclusion: &nbsp; 
 
 
-* For the testing framework, we will follow the guideline from John and the details is in the Moodle.
+* For the testing framework, we will follow the guidelines from John and the details are in the Moodle.
 * Alex will continue working on the class and component diagrams.
 * Katherine will work on a sequence diagram.
-* Complete wireframes before 12/04 to show client.
-* Update the SS to reflect any changes in timeline
-* Update GANTT to reflect the 2 week deferred delivery
+* Complete wireframes before 12/04 to show a client.
+* Update the SS to reflect any changes in the timeline
+* Update GANTT to reflect the 2-week deferred delivery
 
 <br>
 

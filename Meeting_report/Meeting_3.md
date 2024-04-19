@@ -7,12 +7,12 @@
 Proposal completion 
 
 ### Discussions: 
-Assign the tasks to each team members.
+Assign the tasks to each team member.
 
 ### Conclusion: &nbsp; 
 Both agreed on the tasks and deadlines
 Katherine will be working on 
-* selection 1 overview the project, this includes the purpose, business context, scope and out of scope for this project and user characteristics
+* selection 1 overview the project, this includes the purpose, business context, scope and out scope for this project and user characteristics
 * selection 3, this includes the business requirements, functional requirements, mortgage inputs, mortgage operations, outputs, graphing function and use case 
 * Requirement Traceability Matrix 
 

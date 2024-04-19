@@ -12,7 +12,7 @@
    * development platform
 
 ### Discussions: 
-   separate tasks to work on individual and aiming to compete the formal documentations before long two weeks break.
+   separate tasks to work on individual and aim to compete the formal documentations before long two-week break.
    
 
 ### Conclusion: &nbsp; 
@@ -21,7 +21,7 @@
 * we will meet up on the 8th of April for discussion on the testing framework.
 * complete system design by before 8th of April.
 * discuss the wireframe design on the 8th of April.
-* the application will be web application
+* the application will be a web application
     
     1. python -- programming language
     2. flask -- web framework
@@ -30,11 +30,11 @@
     5. Bootstrap --frontend framework 
     6. JavaScript -- programming language
     7. pytest -- testing framework
-    8. Postgres -- database 
+    8. Postgres—database 
     note: no web server and deployment included for this project.
-we can use the grading system in John's Github as a guide to build our project as well. 
+we can use the grading system in John's GitHub as a guide to building our project as well. 
 
-* work on the formulas before meet up 
+* work on the formulas before meeting up 
 
 *  <br>
 

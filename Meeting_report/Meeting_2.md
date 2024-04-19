@@ -7,10 +7,10 @@
 Working on Proposal
 
 ### Discussions: 
-Working on scope, requirements, budget and assigning task for the proposal.
+Working on scope, requirements, budget and assigning the task for the proposal.
 
 ### Conclusion: &nbsp; 
-Draft scope & requirements agreed upon, pending check with the client. Budget format discusses with Alex doing further research. Task assignment for the potential proposal agreed upon. 
+Draft scope & requirements agreed upon, pending check with the client. Budget format discussed with Alex doing further research. Task assignment for the potential proposal agreed upon. 
 <br>
 <br>
 

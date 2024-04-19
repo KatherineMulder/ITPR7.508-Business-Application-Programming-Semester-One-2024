@@ -12,7 +12,7 @@ Engaging with the client (John) to gather additional information and to fully gr
 
 ### Conclusion: &nbsp; 
 Successfully completed the questionnaire and uploaded relevant documentation to Notion for further investigation into the user's requirements. 
-We will discuss in the next team meeting and come up with a project proposal.
+We will discuss the next team meeting and come up with a project proposal.
 <br>
 <br>
 

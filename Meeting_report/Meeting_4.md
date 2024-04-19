@@ -21,7 +21,7 @@ Reflection on the proposal
 5. Add recommendation
 6. Add more into scope and exclude scope 
 
-The proposal must complete by tonight 12/03 
+The proposal must be complete by tonight 12/03 
 
 <br>
 <br>

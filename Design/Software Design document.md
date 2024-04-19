@@ -105,7 +105,7 @@ The Scope for the Mortgage Calculator is as follows:
 
 ## 2. Analysis/ Reflection of Business Issues
 
-For each functionality:
+In this section, we delve into the process of reflection and analysis regarding key business issues we have encountered, and we will examine the rational behind the decisions we have agreed upon and providing clear justifications grounded in various considerations. 
 
 1. The first stage of initial set-up:
 • Analysis: The initial setup process is crucial as it sets the foundation for the entire mortgage management system. Users need to input key details accurately to ensure the calculations and management of their mortgage are done correctly.
@@ -142,7 +142,7 @@ For each functionality:
 Note: Please read URS for more information
 
 ## 3. Analysis & Reflection of the Program Specifications
-
+In reflecting on the program specifications, we'll analyze the final software application and consider any necessary changes or modifications. Also, identify any potential gaps or inconsistencies and propose adjustments to ensure the successful implementation of the software.
 ### 3.1 Graphical User Interface
 
 Users will be greeted with a login page to access their accounts. There will also be a separate page to create an account. Alongside this, once logged into the application, there will be a user settings page to allow for password changes or account deletion.
