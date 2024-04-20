@@ -105,41 +105,34 @@ The Scope for the Mortgage Calculator is as follows:
 
 ## 2. Analysis/ Reflection of Business Issues
 
-In this section, we delve into the process of reflection and analysis regarding key business issues we have encountered, and we will examine the rational behind the decisions we have agreed upon and providing clear justifications grounded in various considerations. 
+In this section, we delve into the process of reflection and analysis regarding key business issues we have encountered, and we will examine the rationale behind the decisions we have agreed upon and provide clear justifications grounded in various considerations. 
+3.1	The first stage of the initial set-up
+Analysis: Getting started is really important because it's the base of the whole mortgage management system. Users have to enter the right info to make sure their mortgage gets handled right.
+Reflection: To deal with this problem, the system has to make it easy and simple to set up. It should give clear instructions and check that everything's correct.
 
-1. The first stage of initial set-up:
-• Analysis: The initial setup process is crucial as it sets the foundation for the entire mortgage management system. Users need to input key details accurately to ensure the calculations and management of their mortgage are done correctly.
-• Reflection: To address this business issue, the system must prioritize simplicity and straightforwardness in the setup process. Providing clear guidance and validation checks can help mitigate errors and ensure users start their mortgage journey smoothly.
+3.2	Update mortgage
+Analysis: It's normal for people's finances or loan terms to change when they have a mortgage. Users should be able to easily and accurately update their mortgage info in the system.
+Reflection: The system should let users make these updates themselves. It needs to make sure the changes show up correctly.
+3.3	Transaction reporting
+Analysis: Transaction reports help users see their payment history and how much they still owe.
+Reflection: It's important for users to have detailed and easy-to-understand transaction reports so they can keep track of their history and understand what's going on.
+3.4	Mortgage editing
+Analysis: Sometimes, mortgage agreements have to change because of different situations or what users want. Users need to be able to change certain details of their mortgage while making sure everything stays accurate and consistent.
+Reflection: Adding editing features is really important to make sure users can do what they need to with their mortgage.
+3.5	Visualization chart
+Analysis: Having pictures of mortgage data can help users understand their money situation and how they've been paying. Users need charts that show their mortgage info clearly.
+Reflection: Adding charts can make it easier for users to understand and get interested in their mortgage.
+3.6	Authentication
+Analysis: Users need a process to create and manage their accounts. 
+Reflection: Building an authentication system that allows users to log in, log out, change passwords, and delete accounts is essential.
 
-2. Update mortgage:
-• Analysis: Changes in financial circumstances or loan terms are common occurrences for mortgage holders. Users need the flexibility to update their mortgage details easily and accurately within the system.
-• Reflection: The system needs to empower users with the ability to make these updates. Ensuring that changes are reflected accurately.
+3.7	Personalization
+Analysis: Users should have the flexibility to edit or delete historical transactions to ensure the accuracy of their financial records. 
+Reflection: Users with full control over their dashboard and mortgage details and implement user-friendly editing and deletion options for historical transactions, allowing users to easily make changes as needed.
+3.8	Intuitive interface
+Analysis: An intuitive interface is important for ensuring that users can easily navigate the mortgage management system and access its features without confusion. 
+Reflection: We should test how easy it is to use and ask users for feedback to find any problems or confusing parts. Then, we can make changes to the design to make sure it's what users want and expect. Doing these tests regularly and updating the system is important to keep it easy to use.
 
-3. Transaction reporting:
-• Analysis: Transaction reports provide users with insights into their payment history and remaining balances.
-• Reflection: Generating detailed and comprehensible transaction reports is important for users to track their historical data, and they will be able to get insights from the reports.
-
-4. Mortgage editing:
-• Analysis: Mortgage agreements may need adjustments over time to accommodate changes in circumstances or preferences. Users require the ability to edit specific details of their mortgage while maintaining data accuracy and consistency.
-• Reflection: Implementing editing features is essential to meet users' needs.
-
-5. Visualization chart:
-• Analysis: Visual representations of mortgage data can enhance users' understanding of their financial status and payment trends. Users require graphical charts that provide clear insights into their mortgage details.
-• Reflection: Implementing visual charts can enhance user experience and engagement.
-
-6. Authentication:
-• Analysis: Users need a process to create and manage their accounts.
-• Reflection: Building an authentication system that allows users to log in, log out, change passwords, and the deleting account is essential.
-
-7. Personalization:
-• Analysis: Users should have the flexibility to edit or delete historical transactions to ensure the accuracy of their financial records.
-• Reflection: Users with full control over their dashboard and mortgage details and implement user-friendly editing and deletion options for historical transactions, allowing users to easily make changes as needed.
-
-8. Intuitive interface:
-• Analysis: An intuitive interface is important for ensuring that users can easily navigate the mortgage management system and access its features without confusion.
-• Reflection: We need to conduct usability testing and gather feedback from users to identify any pain points or areas of confusion. Based on this feedback, we can refine the interface design to ensure that it meets users' needs and expectations. Regular usability evaluations and updates are essential to maintain the system's usability over time.
-
-Note: Please read URS for more information
 
 ## 3. Analysis & Reflection of the Program Specifications
 In reflecting on the program specifications, we'll analyze the final software application and consider any necessary changes or modifications. Also, identify any potential gaps or inconsistencies and propose adjustments to ensure the successful implementation of the software.
@@ -236,6 +229,7 @@ To handle our data storage, we have decided to use Postgres. The main reasonwe d
 To test our software, we will make use of Pytest as it automates the unit testing of our software, ensuring that the code can handle all predicted problems correctly.
 
 ## 6. Data Design
+Data design is about organizing data so we can store, find, and use it easily. In our project, good data design is important because it helps keep our data accurate, makes things run faster, and ensures everything works as it should. We'll use diagrams like ERDs and DFDs to show how our data is set up and how it moves around in our system.
 
 ### 6.1 Entity Relationship Diagram
 
@@ -248,6 +242,7 @@ The Data Flow Diagram (DFD) serves to illustrate the flow of data within the sys
 ![DFD](DFD.png)
 
 ## 7. System Design
+We will provide comprehensive user case, component, activity, and class diagrams to illustrate the structure and implementation of our project system.
 
 ### 7.1 User Case Diagram
 
@@ -263,14 +258,15 @@ The component diagram shows the overviewof how the components of our software wi
 
 The activity diagram is the sequence of actions involved in performing tasks such as inputting data, calculating mortgage payments, viewing amortization schedules, adjusting parameters, and so on. Each activity is connected through transitions, showing the flow of control within the system.
 
-> 1. User login activity diagram
-> ![activity_diagram_add_mortgage](activity_diagram_add_mortgage.png)
-> 2. User update mortgage activity diagram
-> ![activity_diagram_edit_transaction](activity_diagram_edit_transaction.png)
-> 3. User viewing mortgage activity diagram
-> ![activity_diagram_transaction_analysis](activity_diagram_transaction_analysis.png)
-> 4. User viewing mortgage activity diagram
+> 1. Users' login activity diagram
 > ![activity_diagram_user_login](activity_diagram_user_login.png)
+> 2. Users' add mortgage activity diagram
+> ![activity_diagram_add_mortgage](activity_diagram_add_mortgage.png)
+> 3. Users' edit mortgage activity diagram
+> ![activity_diagram_edit_transaction](activity_diagram_edit_transaction.png)
+> 4. Users' viewing mortgage activity diagram
+> ![activity_diagram_transaction_analysis](activity_diagram_transaction_analysis.png)
+
 
 ### 7.4 Class Diagram
 
@@ -282,23 +278,19 @@ The activity diagram is the sequence of actions involved in performing tasks suc
 ## 8. Interface Design
 
 ### 8.1 Wireframes
+We will be shaping how users interact with our system by using wireframes. These wireframes serve as skeletal outlines of our webpages, showcasing the structure and placement of elements. By leveraging wireframes, we can plan and visualize the layout of our interface.
 
-A skeletal outline of the webpage, those wireframes shows the structure and placement of elements.
 **User login page**
-when users open up the webpage. This log in page will display before entry the calculator.
-This page gives users options for log-in and sign-up an account also try it out.
+This log in page will display before entry the calculator. This page gives users options for log-in and sign-up an account.
 > ![login page](wireframe_user_login.png)
 **Sign up page**:
-In this page will grab user's username and password details. Alternately, User can still log in if they remember their login details after enter this page, or they can try the calculator without an account.
+In this page, users can sign up an account by providing user name and password.
 > ![signup page](wireframe_sign_up.png)
-**Index page**: User will be able to view their transaction reports on this page. Where users can edit payment date, delete transaction, add new mortgage and update mortgage.
+**Index page**: Users will be able to view their transaction reports on this page. Where users can add new mortgage, update mortgage, and delete data. This page gives the users of overall of their summary data and mortgage maturity.
 ![wireframe_index](wireframe_index.png)
-**Add mortgage page**: After the user logs in or clicks the 'Try it out' button, the adding new mortgage page will be displayed.
-This page allows users to input new mortgage information.
+**Add mortgage page**: This page allows users to input a new mortgage. 
 > ![wireframe_add_mortgage](wireframe_add_mortgage.png)
-**Update mortgage page**: After a new mortgage is established, user will be able to edit mortgage on this page.
-This page will display current mortgage details and allow users to update the information.
-Users can analysis override payment and add extra costs if there is any. A comment textarea for comment on the costs.
+**Update mortgage page**: After a new mortgage is established, the user will be able to edit mortgage on this page or when they click update mortgage button on the index page. This page will display current mortgage details and allow users to update the information. Users can analysis override payment and add extra costs if there is any. A comment text area for comment on the costs.
 _Note:_ The numbers in the input fields are an example.
 > ![wireframe_update_mortgage](wireframe_update_mortgage.png)
 **Deleting Data Page**: If users wish to delete existing transactions or mortgages, they can access this page through the removing data button on the index page.
@@ -307,11 +299,11 @@ They will see a table of both mortgages and transactions with identifying inform
 **User account icon**:
  When a user clicks the user icon on the top right page, then a pop-up window will appear for user to update their account information.
 > ![wireframe_user_popup_window](wireframe_user_popup_window.png)
-**User update**:
- After a user click update account, a new page will appear for the user to choose whether they want to log-out, delete their account or change their password by click account setting button.
+** Update Account**:
+ After a user click update account from the pop up window, a new page will appear for the user to choose whether they want to log-out, delete their account or change their password by click account setting button.
 > ![wireframe_user_update](wireframe_user_update.png)
 **User account settings**:
-When user click account setting, this page will appear for user to change their password or if they decide not to then they can click logout back to the home page.
+When user clicks account setting, this page will appear for user to change their password or if they decide not to then they can click logout back to the home page.
 > ![wireframe_user_settings](wireframe_account_settings.png)
 
 ## 9. Test Framework
@@ -331,6 +323,7 @@ An example in the Pytest it will show you the results for the class TestStrings.
 ![pytest_result.png](pytest_result.png)
 
 Test scenarios:
+We will provide coverage of the unit's functionality, behavior, and interactions to ensure its correctness and reliability within our project.
 ![test_scenario_unitTesting.png](test_scenario_unitTesting.png)
 _Integration testing_
 Where individual components or modules of a system are combined and tested as a group. The purpose of integration testing is to ensure that the interactions between these components work as expected and that the integrated system functions correctly as a whole.
@@ -353,13 +346,7 @@ Test scenarios:
 ![test_scenario_useracceptancetesting1.png](test_scenario_useracceptancetesting1.png)
 ![test_scenario_useracceptancetesting2.png](test_scenario_useracceptancetesting2.png)
 
-## 10 Definitions, Acronyms and Abbreviations
-
-### Data Design Diagrams
-
-1. **ERD**:
-   - Definition: Entity-Relationship Diagram.
-   - Description: A visual representation of the entities and relationships within a database. It illustrates how entities relate to each other within a database model.
-2. **DFD**:
-   - Definition: Data Flow Diagram.
-   - Description: A graphical representation that shows the flow of data within a system. It visualizes the processes, data stores, and data flows involved in a system or business process.
+## Conclusion 
+This document outlines our plan for building the mortgage calculator, which comes from feedback we got in a recent meeting with our client. We carefully looked at the business and program details, thinking about the problems we faced and the solutions we suggested. By really digging into the program details, we made sure we understood exactly what the project needs. When we were designing it, we focused on three main things: how the system works, how the data is organized, and how people will use it. 
+We included diagrams and sketches to show how the software will work, what it's made of, and who will use it. These pictures help explain what the mortgage calculator does, what it can do, and who it's for. We set up a way to test the project to make sure it's good quality and dependable. We've got different tests to check that the mortgage calculator works right. By testing it a lot, we hope to find and fix any problems or mistakes, making the software better overall. 
+This document is like a roadmap for making the mortgage calculator. We used feedback from our client and what we learned from the program details to plan it out. With clear designs, user-focused needs, and thorough testing, we want to create a tool that makes managing mortgages easier for our client. On top of the design stuff, we wrote a document about what users want. It looks at things from their point of view, spelling out what they expect and need. By listening to users and including their thoughts in our work, we want to make a mortgage calculator that works well.
