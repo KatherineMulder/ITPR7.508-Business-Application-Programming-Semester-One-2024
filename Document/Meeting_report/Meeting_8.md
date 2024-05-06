@@ -13,13 +13,14 @@
 
 ### Discussions: 
 
-Areas to Cover for Four Levels of Test Framework:
+* Areas to Cover for Four Levels of Test Framework:
 We will utilize four levels of testing: unit testing, integration testing, system testing, and User Acceptance Testing (UAT).
 Unit testing involves testing individual components or modules.
 Integration testing focuses on testing the interaction between different components/modules.
 System testing examines the entire system's functionality.
 UAT ensures the system meets business requirements and user expectations.
-Task Separation and Deadline Setting:
+
+* Task Separation and Deadline Setting:
 Tasks are divided as follows:
 Katherine is responsible for completing unit testing and integration testing.
 Alex is responsible for conducting system testing and UAT.
