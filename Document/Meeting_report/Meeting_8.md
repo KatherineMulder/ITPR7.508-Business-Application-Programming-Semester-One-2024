@@ -12,21 +12,24 @@
    
 
 ### Discussions: 
-1. what area needs to be covered for the 4 level of test framework. 
-2. sperated our task and set a deadline for our submission.
-3. overall assignment.
 
+Areas to Cover for Four Levels of Test Framework:
+We will utilize four levels of testing: unit testing, integration testing, system testing, and User Acceptance Testing (UAT).
+Unit testing involves testing individual components or modules.
+Integration testing focuses on testing the interaction between different components/modules.
+System testing examines the entire system's functionality.
+UAT ensures the system meets business requirements and user expectations.
+Task Separation and Deadline Setting:
+Tasks are divided as follows:
+Katherine is responsible for completing unit testing and integration testing.
+Alex is responsible for conducting system testing and UAT.
+Alex will conduct an overall review to identify areas for improvement, changes, and refine the wording to ensure a high-quality report.
+Katherine will format the report and perform a final check for any typos or errors.
+Our target submission deadline for the second assignment is set for before 21/04.
 
-   
 
 ### Conclusion: &nbsp; 
-
-
-* Katherine will complete unit testing and integration testing.
-* ALex will complete system testing and UAT.
-* Alex will check overall what needs to be improved, changes and wording nicely to a high standard report.
-* Katherine will format the report and check any typos.
-* We are aiming to submit our second assignment before 21/04.
+Aiming to complete the format docs on the 28th 
 
 <br>
 
