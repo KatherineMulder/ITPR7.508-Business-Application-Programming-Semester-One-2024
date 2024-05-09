@@ -12,8 +12,8 @@ class User:
     def userid(self, userid):
         if not userid:
             raise ValueError("User ID is required")
-        if len(str(userid)) != 8:
-            raise ValueError("User ID must be 8 characters long")
+        if len(str(userid)) >= 10:
+            raise ValueError("Invlaid ID")
         try:
             userid = int(userid)
         except ValueError:

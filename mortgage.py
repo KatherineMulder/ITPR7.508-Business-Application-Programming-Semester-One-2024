@@ -18,7 +18,11 @@ class Mortgage:
     def mortgage_id(self, mortgage_id):
         if not mortgage_id:
             raise ValueError("Mortgage ID is required")
-        self._mortgage_id = mortgage_id
+        try:
+            mortgageid = int(mortgage_id)
+        except ValueError:
+            raise ValueError("Mortgage ID must be an integer")
+        self._mortgage_id = mortgageid
 
     @property
     def mortgage_name(self):
@@ -27,8 +31,9 @@ class Mortgage:
     @mortgage_name.setter
     def mortgage_name(self, mortgage_name):
         if not mortgage_name:
-            raise ValueError("Mortgage name is required")
-        self._mortgage_name = mortgage_name
+            self._mortgage_name = ""
+        else:
+            self._mortgage_name = mortgage_name
 
     @property
     def start_date(self):
@@ -48,7 +53,12 @@ class Mortgage:
     def initial_interest(self, initial_interest):
         if not initial_interest:
             raise ValueError("Initial interest is required")
-        self._initial_interest = initial_interest
+        # Need to look up and check float type checking
+        try:
+            initialinterest = float(initial_interest)
+        except ValueError:
+            raise ValueError("Initial interest must be a number")
+        self._initial_interest = initialinterest
 
     @property
     def initial_term(self):
@@ -58,7 +68,11 @@ class Mortgage:
     def initial_term(self, initial_term):
         if not initial_term:
             raise ValueError("Initial term is required")
-        self._initial_term = initial_term
+        try:
+            initialterm = int(initial_term)
+        except ValueError:
+            raise ValueError("Initial term must be an integer")
+        self._initial_term = initialterm
 
     @property
     def initial_principal(self):
@@ -68,7 +82,11 @@ class Mortgage:
     def initial_principal(self, initial_principal):
         if not initial_principal:
             raise ValueError("Initial principal is required")
-        self._initial_principal = initial_principal
+        try:
+            initialprincipal = int(initial_principal)
+        except ValueError:
+            raise ValueError("Initial principal must be an integer")
+        self._initial_principal = initialprincipal
 
     @property
     def extra_cost(self):
@@ -76,7 +94,13 @@ class Mortgage:
 
     @extra_cost.setter
     def extra_cost(self, extra_cost):
-        self._extra_cost = extra_cost
+        if not extra_cost:
+            self._extra_cost = 0
+        try:
+            extracost = int(extra_cost)
+        except ValueError:
+            raise ValueError("Extra cost must be an integer")
+        self._extra_cost = extracost
 
     @property
     def deposit(self):
@@ -85,7 +109,11 @@ class Mortgage:
     @deposit.setter
     def deposit(self, deposit):
         if not deposit:
-            raise ValueError("Deposit is required")
+            self._deposit = 0
+        try:
+            deposit = int(deposit)
+        except ValueError:
+            raise ValueError("Deposit must be an integer")
         self._deposit = deposit
 
     @property
@@ -96,9 +124,16 @@ class Mortgage:
     def user_id(self, user_id):
         if not user_id:
             raise ValueError("User ID is required")
-        self._user_id = user_id
+        if len(str(userid)) >= 10:
+            raise ValueError("Invlaid ID")
+        try:
+            userid = int(userid)
+        except ValueError:
+            raise ValueError("User ID must be an integer")
+        self._user_id = userid
 
     def calculate_monthly_interest(self):
+        # Might be problems with this equation with float and int types. Will look into it
         return self.initial_principal * self.initial_interest / 12 if self.initial_principal > 0 else 0
 
     def calculate_repayment(self):
