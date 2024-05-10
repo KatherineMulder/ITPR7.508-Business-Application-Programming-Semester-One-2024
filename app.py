@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
 
 app = Flask(__name__)
@@ -16,22 +16,77 @@ def connect_to_database():
     return conn
 
 
-@app.route("/")
-def main():
-    try:
-        conn = connect_to_database()
-        cursor = conn.cursor()
+@app.route("/", methods=["GET", "POST"])
+def root():
+    return redirect(url_for("login"))
 
-        cursor.execute("SELECT * FROM users")
-        users = cursor.fetchall()
 
-        cursor.close()
-        conn.close()
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        try:
+            conn = connect_to_database()
+            cursor = conn.cursor()
 
-        return render_template("login.html", users=users)
-    except Exception as e:
-        # Handle database errors gracefully
-        return f"An error occurred: {str(e)}"
+            cursor.execute("SELECT * FROM users WHERE username = %s AND password = %s", (username, password))
+            user = cursor.fetchone()
+
+            cursor.close()
+            conn.close()
+
+            if user:
+                return render_template("index.html", username=username)
+            else:
+
+                return redirect(url_for("signup"))
+
+        except Exception as e:
+            return f"An error occurred: {str(e)}"
+
+    return render_template("login.html")
+
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
+
+        if password != confirm_password:
+            return render_template("signup.html", error="Passwords do not match")
+
+        try:
+            conn = connect_to_database()
+            cursor = conn.cursor()
+
+
+            cursor.execute("SELECT 1 FROM users WHERE username = %s", (username,))
+            existing_user = cursor.fetchone()
+
+            if existing_user:
+                return render_template("signup.html", error="Username already exists")
+
+
+            cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
+            conn.commit()
+
+            cursor.close()
+            conn.close()
+
+            return redirect(url_for("index"))
+
+        except Exception as e:
+            return f"An error occurred: {str(e)}"
+
+    return render_template("signup.html")
+
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":

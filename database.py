@@ -41,11 +41,18 @@ def create_database():
     """)
 
     users = [
-        (12345678, 'kat', 'password'),
-        (87654321, 'alex', 'password1'),
-        (56781234, 'john', 'password2')
+        ('kat', 'password'),
+        ('alex', 'password1'),
+        ('john', 'password2')
     ]
-    cursor.executemany("INSERT INTO users (userid, username, password) VALUES (%s, %s, %s)", users)
+
+    # Insert users only if they don't already exist
+    for user in users:
+        try:
+            cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", user)
+        except psycopg2.IntegrityError:
+            # User already exists, skip insertion
+            continue
 
     conn.commit()
     conn.close()
