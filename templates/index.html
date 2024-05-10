@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Display</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div id="dateSelection">
+    <h2>Date Selection</h2>
+    <label for="monthly">Monthly</label>
+    <input type="radio" id="monthly" name="dateType" value="monthly">
+    <label for="fortnightly">Fortnightly</label>
+    <input type="radio" id="fortnightly" name="dateType" value="fortnightly">
+
+</div>
+<div id="container">
+    <div id="table1">
+        <h2>Analysis Summary</h2>
+        <button>Mortgage 1</button>
+        <button>Mortgage 2</button>
+        <button>Combined</button>
+        <p id="date">From: </p>
+        <table border="1">
+            <tr>
+                <th>Estimated repayment:</th>
+                <th>Interest:</th>
+                <th>Principle:</th>
+                <th>Extra:</th>
+                <th>Repayment:</th>
+            </tr>
+            <tr>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+            </tr>
+            <tr>
+                <th>Payments over full term:</th>
+                <th>Payments over reduced term:</th>
+                <th>Full term to amortize:</th>
+                <th>Estimated reduced term to amortize:</th>
+                <th>Interest over full term:</th>
+                <th>Principle + interest:</th>
+                <th>Interest over reduced term:</th>
+                <th>Interest saved over reduced term:</th>
+                <th>Principle + interest over reduced term:</th>
+            </tr>
+             <tr>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+                <td>----</td>
+            </tr>
+        </table>
+    </div>
+    <div id="chart">
+        <h2>Chart</h2>
+        <button>Add New Mortgage</button>
+        <button>Update Mortgage</button>
+        <button>Remove Data</button>
+        <img src="/" alt="Chart">
+    </div>
+</div>
+
+<div>
+    <h2>Amortization Table</h2>
+    <p id="date">From: </p>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Balance</th>
+            <th>Interest</th>
+            <th>Principal</th>
+            <th>Extra</th>
+            <th>Payment</th>
+            <th>Amount of Principal</th>
+            <th>New Balance</th>
+            <th>Accumulated Interest</th>
+            <th>Accumulated Principal Payment</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    document.querySelectorAll('input[name="dateType"]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+            const selectedDateType = document.querySelector('input[name="dateType"]:checked').value;
+            const today = new Date();
+            let outputDate;
+
+            if (selectedDateType === "monthly") {
+                outputDate = today.toDateString();
+            } else if (selectedDateType === "fortnightly") {
+
+                const fortnightlyDate = new Date(today);
+                fortnightlyDate.setDate(fortnightlyDate.getDate() + 14);
+                outputDate = fortnightlyDate.toDateString();
+            }
+            document.getElementById('selectedDate').textContent = "Selected Date: " + outputDate;
+        });
+    });
+</script>
+
+</body>
+</html>

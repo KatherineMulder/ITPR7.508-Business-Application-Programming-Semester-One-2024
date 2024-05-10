@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new mortgage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_add_mortgage.css') }}">
+
+</head>
+<body>
+
+    <div class="main_mortgage">
+        <h1>Add Mortgage</h1>
+        <div class="container_mortgage">
+            <div class="input-container">
+                <div class="input-group">
+                    <label for="mortgage_name">Mortgage Name:</label>
+                    <input type="text" id="Mortgage Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="principal">principal ($):</label>
+                    <input type="number" id="principal" required>
+                </div>
+                <div class="input-group">
+                    <label for="interest">Interest(%):</label>
+                    <input type="number" id="interest" required>
+                </div>
+                <div class="input-group">
+                    <label for="deposit">Deposit:</label>
+                    <input type="number" id="deposit" required>
+                </div>
+                <div class="input-group">
+                    <label for="extraCosts">Extra Costs:</label>
+                    <input type="number" id="extraCosts" required>
+                </div>
+                <div class="input-group">
+                    <label for="teem">Term (Years):</label>
+                    <input type="number" id="term" required>
+                </div>
+                <button onclick="calculate()">Calculate</button>
+            </div>
+            <div class="result-container">
+
+                <div class="date">
+                    <img src="/" alt="Chart">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

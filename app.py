@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import psycopg2
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "secret key"
 
 
 def connect_to_database():
@@ -86,7 +87,10 @@ def signup():
 
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    if 'username' in session:
+        return render_template("index.html", username=session['username'])
+    else:
+        return redirect(url_for("login"))
 
 
 if __name__ == "__main__":

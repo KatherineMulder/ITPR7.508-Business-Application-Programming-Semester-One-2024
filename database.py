@@ -46,12 +46,11 @@ def create_database():
         ('john', 'password2')
     ]
 
-    # Insert users only if they don't already exist
     for user in users:
         try:
             cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", user)
         except psycopg2.IntegrityError:
-            # User already exists, skip insertion
+
             continue
 
     conn.commit()
