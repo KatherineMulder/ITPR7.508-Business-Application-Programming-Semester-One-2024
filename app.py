@@ -92,5 +92,21 @@ def index():
         return redirect(url_for("login"))
 
 
+@app.route("/new_mortgage")
+def new_mortgage():
+    return render_template("new_mortgage.html")
+
+
+@app.route("/update_mortgage")
+def update_mortgage():
+    return render_template("update_mortgage.html")
+
+
+@app.route("/remove_mortgage")
+def remove_mortgage():
+    return render_template("remove_mortgage.html")
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)

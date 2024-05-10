@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update mortgage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_add_mortgage.css') }}">
+
+</head>
+<body>
+
+    <div class="main_mortgage">
+        <h1>Update Mortgage</h1>
+        <div class="container_mortgage">
+            <div class="input-container">
+                <div class="input-group">
+                    <select id="Mortgage" class="form-select" required>
+                    <option selected disabled>Select Mortgage Name</option>
+                    <option value="Mortgage1">Mortgage 1</option>
+                    <option value="Mortgage2">Mortgage 2</option>
+                    <option value="Combined">Combined</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="date">Date:</label>
+                    <input type="text" id="date" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="principal">principal ($):</label>
+                    <input type="number" id="principal" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="interest">Interest(%):</label>
+                    <input type="number" id="interest" required>
+                </div>
+
+               <div class="input-group" style="display: flex; justify-content: space-between;">
+                <div class="input-group-item" style="flex: 1;">
+                    <label for="term_years">Term (Years):</label>
+                    <input type="number" id="term_years" required>
+                </div>
+                <div class="input-group-item" style="flex: 1;">
+                    <label for="term_months">Term (Months):</label>
+                    <input type="number" id="term_months" required>
+                </div>
+            </div>
+
+                <div class="input-group">
+                    <label for="payment_override">Payment Override ($):</label>
+                    <input type="number" id="payment_override" required>
+                </div>
+
+            <div class="input-group d-flex justify-content-center">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="togglePaymentFrequencyMonthly">
+                    <label class="form-check-label" for="togglePaymentFrequencyMonthly">Monthly</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="togglePaymentFrequencyYearly">
+                    <label class="form-check-label" for="togglePaymentFrequencyYearly">Yearly</label>
+                </div>
+            </div>
+
+
+                <div class="input-group">
+                    <label for="additionalCosts">Additional Costs:</label>
+                    <input type="number" id="additionalCosts" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="commonField">Common Label:</label>
+                    <textarea id="commonField" rows="4" cols="50" required></textarea>
+                </div>
+
+                <button onclick="calculate()">Update Mortgage</button>
+            </div>
+
+            <div class="result-container">
+                <div class="date">
+                    <img src="/" alt="Chart">
+                </div>
+                <div class="button-container">
+                    <button onclick="saveChange()">Save Change</button>
+                    <button onclick="cancel_update()">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

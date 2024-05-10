@@ -4,7 +4,7 @@ body{
   font-family: Roboto;
   background-repeat: no-repeat;
   background-size: cover;
-  background:#F8F8FF ;
+  background: linear-gradient(120deg, #91c2f6, #bae885);
   height: 100vh;
   overflow: hidden;
 }
@@ -115,3 +115,23 @@ input[type="Submit"]:hover{
   width: 100vw;
   height: 25vh;
 }
+
+#container {
+    display: flex;
+}
+
+#table1 {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#chart {
+    flex: 1;
+}
+ /*button*/
+
+
+
+
+
+/*add mortgage*/

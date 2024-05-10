@@ -1,8 +1,24 @@
 ## Progress
-10/05/2024
 Katherine:
-* completed index.html, login.html, new_mortgage.html and signup.html
+* completed all the front end.
+1. login page:
+![login.png](login.png)
+2. 
 * users will be able to sign up, and it will input the data into the database.
+![img.png](signup.png)
+* 
+for example, I added ash as username and admin as password.
+it shows in the database 
+![img.png](database_user.png)
+
 * once users successfully it will show up the index page here. 
-![indexpage.png](index_page.png)
- I will work on formatting the index page and other pages then start work on mortgage.py
+![img.png](index.png)
+ 
+* add mortgage page: 
+![img.png](add_mortgage.png)
+
+* update mortgage 
+![img.png](update.png)
+
+* remove data page
+![img.png](remove_data.png)
