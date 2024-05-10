@@ -38,9 +38,9 @@ def login():
             conn.close()
 
             if user:
-                return render_template("index.html", username=username)
+                session['username'] = username  # Setting the username in session
+                return redirect(url_for("index"))
             else:
-
                 return redirect(url_for("signup"))
 
         except Exception as e:
@@ -63,13 +63,11 @@ def signup():
             conn = connect_to_database()
             cursor = conn.cursor()
 
-
             cursor.execute("SELECT 1 FROM users WHERE username = %s", (username,))
             existing_user = cursor.fetchone()
 
             if existing_user:
                 return render_template("signup.html", error="Username already exists")
-
 
             cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
             conn.commit()
@@ -88,7 +86,8 @@ def signup():
 @app.route("/index")
 def index():
     if 'username' in session:
-        return render_template("index.html", username=session['username'])
+        username = session['username']
+        return render_template("index.html", username=username)
     else:
         return redirect(url_for("login"))
 

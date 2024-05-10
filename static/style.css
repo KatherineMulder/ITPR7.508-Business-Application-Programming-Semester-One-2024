@@ -4,7 +4,7 @@ body{
   font-family: Roboto;
   background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(120deg, #91c2f6, #bae885);
+  background:#F8F8FF ;
   height: 100vh;
   overflow: hidden;
 }
