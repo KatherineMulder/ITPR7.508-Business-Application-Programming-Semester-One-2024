@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import psycopg2
+from mortgage import Mortgage
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret key"
@@ -38,7 +39,7 @@ def login():
             conn.close()
 
             if user:
-                session['username'] = username  # Setting the username in session
+                session['username'] = username
                 return redirect(url_for("index"))
             else:
                 return redirect(url_for("signup"))
@@ -91,10 +92,54 @@ def index():
     else:
         return redirect(url_for("login"))
 
-
-@app.route("/new_mortgage")
+@app.route('/new_mortgage', methods=['GET', 'POST'])
 def new_mortgage():
-    return render_template("new_mortgage.html")
+    if request.method == 'POST':
+        mortgage_name = request.form['mortgage_name']
+        principal = float(request.form['initial_principal'])
+        interest = float(request.form['initial_interest'])
+        term_years = int(request.form['initial_term'])
+
+        new_mortgage = Mortgage(
+            mortgage_id=None,
+            mortgage_name=mortgage_name,
+            start_date=None,
+            initial_interest=interest,
+            initial_term=term_years,
+            initial_principal=principal
+        )
+
+        # Calculate
+        monthly_interest = round(new_mortgage.calculate_monthly_interest(), 2)
+        monthly_repayment = round(new_mortgage.calculate_monthly_repayment(), 2)
+        monthly_principal_repayment = round(new_mortgage.calculate_monthly_principal_repayment(), 2)
+
+        fortnightly_interest = round(new_mortgage.calculate_fortnightly_interest(), 2)
+        fortnightly_repayment = round(new_mortgage.calculate_fortnightly_repayment(), 2)
+        fortnightly_principal_repayment = round(new_mortgage.calculate_fortnightly_principal_repayment(), 2)
+
+        # format the numbers
+        monthly_interest = "{:.2f}".format(monthly_interest)
+        monthly_repayment = "{:.2f}".format(monthly_repayment)
+        monthly_principal_repayment = "{:.2f}".format(monthly_principal_repayment)
+
+        fortnightly_interest = "{:.2f}".format(fortnightly_interest)
+        fortnightly_repayment = "{:.2f}".format(fortnightly_repayment)
+        fortnightly_principal_repayment = "{:.2f}".format(fortnightly_principal_repayment)
+
+        return render_template("new_mortgage.html",
+                               mortgage_name=mortgage_name,
+                               principal=principal,
+                               interest=interest,
+                               term_years=term_years,
+                               monthly_interest=monthly_interest,
+                               monthly_repayment=monthly_repayment,
+                               monthly_principal_repayment=monthly_principal_repayment,
+                               fortnightly_interest=fortnightly_interest,
+                               fortnightly_repayment=fortnightly_repayment,
+                               fortnightly_principal_repayment=fortnightly_principal_repayment)
+
+    return render_template('new_mortgage.html')
 
 
 @app.route("/update_mortgage")
@@ -105,7 +150,6 @@ def update_mortgage():
 @app.route("/remove_mortgage")
 def remove_mortgage():
     return render_template("remove_mortgage.html")
-
 
 
 if __name__ == "__main__":

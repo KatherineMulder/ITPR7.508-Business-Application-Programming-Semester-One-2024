@@ -3,50 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add new mortgage</title>
+    <title>Add New Mortgage</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style_add_mortgage.css') }}">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="main_mortgage">
-        <h1>Add Mortgage</h1>
-        <div class="container_mortgage">
-            <div class="input-container">
-                <div class="input-group">
-                    <label for="mortgage_name">Mortgage Name:</label>
-                    <input type="text" id="Mortgage Name" required>
-                </div>
-                <div class="input-group">
-                    <label for="principal">principal ($):</label>
-                    <input type="number" id="principal" required>
-                </div>
-                <div class="input-group">
-                    <label for="interest">Interest(%):</label>
-                    <input type="number" id="interest" required>
-                </div>
-                <div class="input-group">
-                    <label for="deposit">Deposit:</label>
-                    <input type="number" id="deposit" required>
-                </div>
-                <div class="input-group">
-                    <label for="extraCosts">Extra Costs:</label>
-                    <input type="number" id="extraCosts" required>
-                </div>
-                <div class="input-group">
-                    <label for="teem">Term (Years):</label>
-                    <input type="number" id="term" required>
-                </div>
-                <button onclick="calculate()">Calculate</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="main_mortgage">
+                <h1>Add Mortgage</h1>
+                <form action="{{ url_for('new_mortgage') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="mortgage_name" class="form-label">Mortgage Name:</label>
+                        <input type="text" class="form-control" id="mortgage_name" name="mortgage_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="principal" class="form-label">Principal ($):</label>
+                        <input type="number" class="form-control" id="principal" name="initial_principal" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="interest" class="form-label">Interest (%):</label>
+                        <input type="number" class="form-control" id="interest" name="initial_interest" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="term" class="form-label">Term (Years):</label>
+                        <input type="number" class="form-control" id="term" name="initial_term" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                </form>
             </div>
+        </div>
+        <div class="col-md-6">
             <div class="result-container">
-
-                <div class="date">
-                    <img src="/" alt="Chart">
+                <h2>Calculated Results</h2>
+                <div class="result-item">
+                    <p class="title">Mortgage Name:</p>
+                    <p>{{ mortgage_name }}</p>
                 </div>
-
+                <div class="result-item">
+                    <p>Monthly Interest: {{ monthly_interest }}</p>
+                    <p>Monthly Principal Repayment: {{ monthly_principal_repayment }}</p>
+                    <p>Monthly Repayment: {{ monthly_repayment }}</p>
+                </div>
+                <div class="result-item">
+                    <p>Fortnightly Principal Repayment: {{ fortnightly_principal_repayment }}</p>
+                    <p>Fortnightly Interest: {{ fortnightly_interest }}</p>
+                    <p>Fortnightly Repayment: {{ fortnightly_repayment }}</p>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-secondary">Save Mortgage</button>
+                    <button type="submit" class="btn btn-secondary">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+
 </body>
 </html>
