@@ -1,3 +1,6 @@
+from decimal import Decimal
+
+
 class Mortgage:
     def __init__(self, mortgage_id, mortgage_name, start_date, initial_interest, initial_term, initial_principal):
         self._mortgage_id = mortgage_id
@@ -78,12 +81,15 @@ class Mortgage:
         ])
 
     def calculate_monthly_interest(self):
-        return self.initial_principal * self.initial_interest / 12 / 100 if self.initial_principal > 0 else 0
+        if self.initial_principal > 0:
+            return (Decimal(str(self.initial_principal)) * Decimal(str(self.initial_interest)) / Decimal('12') / Decimal('100')).quantize(Decimal('.01'))
+        else:
+            return Decimal('0')
 
     def calculate_monthly_repayment(self):
-        rate_per_month = self.initial_interest / 12 / 100
+        rate_per_month = Decimal(str(self.initial_interest)) / Decimal('12') / Decimal('100')
         term_in_months = self.initial_term * 12
-        return self.initial_principal * (rate_per_month / (1 - (1 + rate_per_month) ** -term_in_months))
+        return (Decimal(str(self.initial_principal)) * (rate_per_month / (Decimal('1') - (Decimal('1') + rate_per_month) ** -term_in_months))).quantize(Decimal('.01'))
 
     def calculate_monthly_principal_repayment(self):
         monthly_interest = self.calculate_monthly_interest()
@@ -91,23 +97,26 @@ class Mortgage:
         return monthly_repayment - monthly_interest
 
     def calculate_principal_remaining(self, months):
-        remaining_principal = self.initial_principal
+        remaining_principal = Decimal(str(self.initial_principal))
         for _ in range(months):
             monthly_principal_repayment = self.calculate_monthly_principal_repayment()
             remaining_principal -= monthly_principal_repayment
         return remaining_principal
 
     def calculate_fortnightly_interest(self):
-        return self.initial_principal * self.initial_interest / 26 / 100 if self.initial_principal > 0 else 0
+        if self.initial_principal > 0:
+            return (Decimal(str(self.initial_principal)) * Decimal(str(self.initial_interest)) / Decimal('26') / Decimal('100')).quantize(Decimal('.01'))
+        else:
+            return Decimal('0')
 
     def calculate_fortnightly_repayment(self):
-        rate_per_fortnight = self.initial_interest / 26 / 100
+        rate_per_fortnight = Decimal(str(self.initial_interest)) / Decimal('26') / Decimal('100')
         term_in_fortnights = self.initial_term * 26
-        return self.initial_principal * (rate_per_fortnight / (1 - (1 + rate_per_fortnight) ** -term_in_fortnights))
+        return (Decimal(str(self.initial_principal)) * (rate_per_fortnight / (Decimal('1') - (Decimal('1') + rate_per_fortnight) ** -term_in_fortnights))).quantize(Decimal('.01'))
 
     def calculate_fortnightly_principal_repayment(self):
         fortnightly_interest = self.calculate_fortnightly_interest()
-        fortnightly_repayment = self.calculate_monthly_repayment()
+        fortnightly_repayment = self.calculate_fortnightly_repayment()
         return fortnightly_repayment - fortnightly_interest
 
     def calculate_fortnightly_principal_remaining(self, fortnights):
