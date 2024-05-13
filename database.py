@@ -12,7 +12,6 @@ def create_database():
     default_conn.autocommit = True
     default_cursor = default_conn.cursor()
 
-    # check database exists
     default_cursor.execute("SELECT 1 FROM pg_catalog.pg_database WHERE datname = 'mortgage_calculator'")
     database_exists = default_cursor.fetchone()
 
@@ -21,7 +20,6 @@ def create_database():
 
     default_conn.close()
 
-    # connect to the newly created database mortgage_calculator
     conn = psycopg2.connect(
         dbname="mortgage_calculator",
         user="postgres",
@@ -33,28 +31,24 @@ def create_database():
     cursor = conn.cursor()
 
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-            userid SERIAL PRIMARY KEY,
-            username VARCHAR(50) UNIQUE NOT NULL,
-            password VARCHAR(50) NOT NULL
+        CREATE TABLE IF NOT EXISTS mortgages (
+            mortgage_id SERIAL PRIMARY KEY,
+            mortgage_name VARCHAR(100) NOT NULL,
+            principal NUMERIC NOT NULL,
+            interest NUMERIC NOT NULL,
+            term_years INTEGER NOT NULL,
+            deposit NUMERIC,
+            extra_costs NUMERIC,
+            monthly_interest NUMERIC,
+            monthly_repayment NUMERIC,
+            monthly_principal_repayment NUMERIC,
+            fortnightly_interest NUMERIC,
+            fortnightly_repayment NUMERIC,
+            fortnightly_principal_repayment NUMERIC
         )
     """)
 
-    users = [
-        ('kat', 'password'),
-        ('alex', 'password1'),
-        ('john', 'password2')
-    ]
-
-    for user in users:
-        try:
-            cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", user)
-        except psycopg2.IntegrityError:
-
-            continue
-
     conn.commit()
     conn.close()
-
 
 create_database()

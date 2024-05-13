@@ -2,13 +2,15 @@ from decimal import Decimal
 
 
 class Mortgage:
-    def __init__(self, mortgage_id, mortgage_name, start_date, initial_interest, initial_term, initial_principal):
+    def __init__(self, mortgage_id, mortgage_name, start_date, initial_interest, initial_term, initial_principal, deposit=0, extra_costs=0):
         self._mortgage_id = mortgage_id
         self._mortgage_name = mortgage_name
         self._start_date = start_date
         self._initial_interest = initial_interest
         self._initial_term = initial_term
         self._initial_principal = initial_principal
+        self._deposit = deposit
+        self._extra_costs = extra_costs
 
     @property
     def mortgage_id(self):
@@ -70,6 +72,25 @@ class Mortgage:
             raise ValueError("Initial principal is required")
         self._initial_principal = initial_principal
 
+    @property
+    def deposit(self):
+        return self._deposit
+
+    @deposit.setter
+    def deposit(self, deposit):
+        self._deposit = deposit
+
+    @property
+    def extra_costs(self):
+        return self._extra_costs
+
+    @extra_costs.setter
+    def extra_costs(self, extra_costs):
+        self._extra_costs = extra_costs
+
+    def total_loan_amount(self):
+        return self._initial_principal - self._deposit + self._extra_costs
+
     def __str__(self):
         return "\n".join([
             f"Mortgage ID: {self.mortgage_id}",
@@ -78,18 +99,28 @@ class Mortgage:
             f"Initial Interest: {self.initial_interest}",
             f"Initial Term: {self.initial_term}",
             f"Initial Principal: {self.initial_principal}",
+            f"Deposit: {self.deposit}",
+            f"Extra Costs: {self.extra_costs}",
         ])
 
     def calculate_monthly_interest(self):
-        if self.initial_principal > 0:
-            return (Decimal(str(self.initial_principal)) * Decimal(str(self.initial_interest)) / Decimal('12') / Decimal('100')).quantize(Decimal('.01'))
+        total_loan_amount = self._initial_principal - self._deposit + self._extra_costs
+        if total_loan_amount > 0:
+            return (Decimal(str(total_loan_amount)) * Decimal(str(self._initial_interest)) / Decimal('12') / Decimal(
+                '100')).quantize(Decimal('.01'))
         else:
             return Decimal('0')
 
     def calculate_monthly_repayment(self):
-        rate_per_month = Decimal(str(self.initial_interest)) / Decimal('12') / Decimal('100')
-        term_in_months = self.initial_term * 12
-        return (Decimal(str(self.initial_principal)) * (rate_per_month / (Decimal('1') - (Decimal('1') + rate_per_month) ** -term_in_months))).quantize(Decimal('.01'))
+        rate_per_month = Decimal(str(self._initial_interest)) / Decimal('12') / Decimal('100')
+        term_in_months = self._initial_term * 12
+        total_loan_amount = self._initial_principal - self._deposit + self._extra_costs
+        if total_loan_amount > 0:
+            return (Decimal(str(total_loan_amount)) * (
+                        rate_per_month / (Decimal('1') - (Decimal('1') + rate_per_month) ** -term_in_months))).quantize(
+                Decimal('.01'))
+        else:
+            return Decimal('0')
 
     def calculate_monthly_principal_repayment(self):
         monthly_interest = self.calculate_monthly_interest()
@@ -97,22 +128,30 @@ class Mortgage:
         return monthly_repayment - monthly_interest
 
     def calculate_principal_remaining(self, months):
-        remaining_principal = Decimal(str(self.initial_principal))
+        remaining_principal = Decimal(str(self._initial_principal))
         for _ in range(months):
             monthly_principal_repayment = self.calculate_monthly_principal_repayment()
             remaining_principal -= monthly_principal_repayment
         return remaining_principal
 
     def calculate_fortnightly_interest(self):
-        if self.initial_principal > 0:
-            return (Decimal(str(self.initial_principal)) * Decimal(str(self.initial_interest)) / Decimal('26') / Decimal('100')).quantize(Decimal('.01'))
+        total_loan_amount = self._initial_principal - self._deposit + self._extra_costs
+        if total_loan_amount > 0:
+            return (Decimal(str(total_loan_amount)) * Decimal(str(self._initial_interest)) / Decimal('26') / Decimal(
+                '100')).quantize(Decimal('.01'))
         else:
             return Decimal('0')
 
     def calculate_fortnightly_repayment(self):
-        rate_per_fortnight = Decimal(str(self.initial_interest)) / Decimal('26') / Decimal('100')
-        term_in_fortnights = self.initial_term * 26
-        return (Decimal(str(self.initial_principal)) * (rate_per_fortnight / (Decimal('1') - (Decimal('1') + rate_per_fortnight) ** -term_in_fortnights))).quantize(Decimal('.01'))
+        rate_per_fortnight = Decimal(str(self._initial_interest)) / Decimal('26') / Decimal('100')
+        term_in_fortnights = self._initial_term * 26
+        total_loan_amount = self._initial_principal - self._deposit + self._extra_costs
+        if total_loan_amount > 0:
+            return (Decimal(str(total_loan_amount)) * (rate_per_fortnight / (
+                        Decimal('1') - (Decimal('1') + rate_per_fortnight) ** -term_in_fortnights))).quantize(
+                Decimal('.01'))
+        else:
+            return Decimal('0')
 
     def calculate_fortnightly_principal_repayment(self):
         fortnightly_interest = self.calculate_fortnightly_interest()
@@ -120,9 +159,11 @@ class Mortgage:
         return fortnightly_repayment - fortnightly_interest
 
     def calculate_fortnightly_principal_remaining(self, fortnights):
+        remaining_principal = Decimal(str(self._initial_principal))
         for _ in range(fortnights):
             fortnightly_principal_repayment = self.calculate_fortnightly_principal_repayment()
-            self.initial_principal -= fortnightly_principal_repayment
+            remaining_principal -= fortnightly_principal_repayment
+        return remaining_principal
 
 
 if __name__ == "__main__":
@@ -134,13 +175,15 @@ if __name__ == "__main__":
         initial_interest=5.0,
         initial_term=30,
         initial_principal=300000,
+        deposit=5000,
+        extra_costs=1000
     )
 
     print(mortgage)
     assert (
             str(mortgage)
             == "Mortgage ID: 1\nMortgage Name: test Mortgage\nStart Date: 2024-05-06\nInitial Interest: "
-               "5.0\nInitial Term: 30\nInitial Principal: 300000"
+               "5.0\nInitial Term: 30\nInitial Principal: 300000\nDeposit: 5000\nExtra Costs: 1000"
     ), "__str__ not the same"
 
     mortgage.mortgage_name = "New Mortgage"
@@ -161,6 +204,4 @@ if __name__ == "__main__":
     print("Fortnightly Principal Repayment:", mortgage.calculate_fortnightly_principal_repayment())
     print("End Tests")
 
-# TODO add deposit function
 
-# TODO add extra cost function

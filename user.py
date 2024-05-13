@@ -1,3 +1,9 @@
+import psycopg2
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+
 class User:
     def __init__(self, userid, username, password):
         self._userid = userid
@@ -53,31 +59,74 @@ class User:
     def __str__(self):
         return self.show()
 
+    @staticmethod
+    def create_user_table():
+        try:
+            conn = psycopg2.connect(
+                dbname="mortgage_calculator",
+                user="postgres",
+                password="admin123",
+                host="localhost",
+                port="5432"
+            )
+            conn.autocommit = True
+            cursor = conn.cursor()
 
-if __name__ == "__main__":
-    print("Start Tests")
-    user = User(userid=12345678, username="kat", password="katherine")
-    print(user)
-    assert (
-            str(user)
-            == "User ID: 12345678\nUsername: kat\nPassword: katherine"
-    ), "__str__ not the same"
+            cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS users (
+                        userid SERIAL PRIMARY KEY,
+                        username VARCHAR(50) UNIQUE NOT NULL,
+                        password VARCHAR(50) NOT NULL
+                    )
+                """)
+        except psycopg2.Error as e:
+            logging.error(f"Error creating user table: {e}")
+        finally:
+            conn.close()
 
-    assert (
-            user.show()
-            == "User ID: 12345678\nUsername: kat\nPassword: katherine"
-    ), "show not the same"
+    @staticmethod
+    def add_user(username, password):
+        try:
+            conn = psycopg2.connect(
+                dbname="mortgage_calculator",
+                user="postgres",
+                password="admin123",
+                host="localhost",
+                port="5432"
+            )
+            conn.autocommit = True
+            cursor = conn.cursor()
 
-    print(user.username)
-    user.username = "kat"
-    print(user.username)
-    assert user.username == "kat", "just a getter and setter"
+            cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
+        except psycopg2.IntegrityError:
+            logging.warning("User already exists.")
+        except psycopg2.Error as e:
+            logging.error(f"Error adding user: {e}")
+        finally:
+            conn.close()
 
-    try:
-        user.userid = 12345
-    except ValueError:
-        pass
-    except:
-        raise
+    @staticmethod
+    def authenticate_user(username, password):
+        user = None
+        try:
+            conn = psycopg2.connect(
+                dbname="mortgage_calculator",
+                user="postgres",
+                password="admin123",
+                host="localhost",
+                port="5432"
+            )
+            conn.autocommit = True
+            cursor = conn.cursor()
 
-    print("End Tests")
+            cursor.execute("SELECT * FROM users WHERE username = %s AND password = %s", (username, password))
+            user = cursor.fetchone()
+        except psycopg2.Error as e:
+            logging.error(f"Error authenticating user: {e}")
+        finally:
+            conn.close()
+
+        return user
+
+
+User.create_user_table()

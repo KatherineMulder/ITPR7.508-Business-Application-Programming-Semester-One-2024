@@ -12,7 +12,7 @@
 <div class="container">
     <div class="center">
         <h1>Sign Up</h1>
-        <form action="" method="POST">
+        <form action="{{ url_for('signup') }}" method="post">
             <div class="txt_field">
                 <i class="fas fa-user input-icon"></i>
                 <input type="text" name="username" required>
@@ -34,7 +34,7 @@
 
             <input name="submit" type="Submit" value="Sign Up">
             <div class="signup_link">
-                Already a member? <a href="{{ url_for('login') }}">Sign up</a>
+                Already a member? <a href="{{ url_for('login') }}">Log in</a>
             </div>
         </form>
     </div>
